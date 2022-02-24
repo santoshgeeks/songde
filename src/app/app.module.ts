@@ -7,7 +7,7 @@ import { PromotionComponent } from './promotion/promotion.component';
 import { PromotionToolComponent } from './promotion-tool/promotion-tool.component';
 import { FooterComponent } from './footer/footer.component';
 import { PromotionHomeComponent } from './promotion-home/promotion-home.component';
-// import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ToolDetailsComponent } from './tool-details/tool-details.component';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { ToolDetailsComponent } from './tool-details/tool-details.component';
     FooterComponent,
     PromotionHomeComponent,
     ToolDetailsComponent,
-    // ProfileComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
