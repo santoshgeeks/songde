@@ -1,0 +1,75 @@
+.customCard {
+    background: #FFFFFF;
+    border: 1px solid #E0E3EB;
+    box-sizing: border-box;
+    border-radius: 24px;
+    padding: 20px;
+    height: 320px;
+    margin-bottom: 30px;
+    position: relative;
+
+    .icon {
+        background: #E7EBFB;
+        border-radius: 59px;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardHeading {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: #222222;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .lockIcon {
+        width: 55px;
+        margin-left: auto;
+
+        img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+
+    }
+
+    .disc {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 19px;
+        padding: 0;
+        color: rgba(34, 34, 34, 0.8);
+        margin-top: 10px;
+    }
+
+    .buttonRow {
+        position: absolute;
+        bottom: 8%;
+    }
+
+
+
+    .clamNowButton {
+        background: #FFFFFF;
+        box-shadow: -5px -5px 10px #FFFFFF, 4px 5px 10px rgba(216, 218, 225, 0.4);
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 21px;
+        color: #3D67FF;
+        width: 117px;
+        height: 45px;
+        outline: none;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

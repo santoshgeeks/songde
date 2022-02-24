@@ -1,0 +1,374 @@
+.box-with-border {
+    background: #F9F9F9;
+    border: 1px solid #ECECEC;
+    box-sizing: border-box;
+    border-radius: 23px;
+    padding: 13px 15px 15px 8px;
+    margin-top: 45px;
+
+    .musicImage {
+        border-radius: 10px;
+    }
+
+    .songName {
+        padding: 0;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: #222222;
+    }
+
+    .publishedOn {
+        padding: 0;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 170%;
+        color: rgba(34, 34, 34, 0.8);
+    }
+
+    .clapAndPlay {
+        padding: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 170%;
+        color: #989AA3;
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .changeButton {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        button {
+            width: 215px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .selectTrack {
+            background: #FFFFFF;
+            border-radius: 10px;
+            width: 230px;
+            height: 191px;
+            overflow-y: auto;
+
+            .songName {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                color: #222222;
+                padding: 0px;
+            }
+
+            .disc {
+                font-style: normal;
+                font-weight: 300;
+                font-size: 10px;
+                line-height: 15px;
+                color: #222222;
+                padding: 0px;
+            }
+
+            img {
+                border-radius: 10px;
+            }
+
+
+        }
+    }
+}
+
+.promotionToolArea {
+    padding: 0;
+    margin-top: 50px;
+
+    .qrCodeWidgit {
+        background: #FFFFFF;
+        border: 1px solid #E0E3EB;
+        box-sizing: border-box;
+        border-radius: 24px;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .qrCode {
+        margin-bottom: 30px;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    .qrButton {
+        border: none;
+        outline: none;
+        background: #F9F9F9;
+        box-shadow: -5px -5px 10px #FFFFFF, 4px 5px 10px rgba(216, 218, 225, 0.7);
+        border-radius: 8px;
+        width: 230px;
+        height: 50px;
+        color: #3D67FF;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .dropExpends {
+        border: 1px solid #A8ABBB;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 570px;
+        height: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #3D67FF;
+        }
+    }
+
+    .expandedDrop {
+        border: 1px solid #A8ABBB;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 570px;
+        height: 140px;
+        cursor: pointer;
+        padding: 10px;
+
+        img {
+            float: right;
+            margin-top: 8px;
+        }
+
+        span {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #3D67FF;
+            margin-top: 21px;
+        }
+
+        .number {
+            margin-top: 21px;
+        }
+
+        .no {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: #222222;
+
+        }
+
+        .details {
+            .last7Days {
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 21px;
+                color: rgba(34, 34, 34, 0.8);
+
+                .number {
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #222222;
+                    margin-left: 20px;
+
+                }
+            }
+        }
+
+        .text {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+            color: rgba(34, 34, 34, 0.8);
+        }
+
+    }
+
+    a {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-decoration-line: underline;
+        color: rgba(34, 34, 34, 0.8);
+        width: 234px;
+
+    }
+
+    .hrLine {
+        height: 1px;
+        width: 100%;
+        background-color: #ECECEC;
+        margin-top: 50px;
+        margin-bottom: 44px;
+    }
+
+    .toolHeadin {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        color: #222222;
+        padding: 0;
+    }
+
+    .fileIcon {
+        width: 36px;
+        height: 36px;
+        background: #E7EBFB;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    .howItWorks {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 170%;
+        color: #222222;
+        width: 200px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .howItWorksDisc {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 170%;
+        color: rgba(34, 34, 34, 0.8);
+        margin-top: 15px;
+    }
+
+    ul {
+        padding-left: 18px;
+
+        li {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 170%;
+            color: rgba(34, 34, 34, 0.8);
+        }
+    }
+
+    .list {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 170%;
+        color: rgba(34, 34, 34, 0.8);
+        padding: 0;
+    }
+
+    .tooldisc {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 170%;
+        color: rgba(34, 34, 34, 0.8);
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .toolNote {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 170%;
+        color: #3D67FF;
+        padding: 0;
+        margin-top: 10px;
+    }
+}
+
+#style-4::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+    background: #E0E3EB;
+    // background-color: #000000;
+    border: 2px solid #E0E3EB;
+}
+
+@media (max-width: 768px) {
+    .box-with-border {
+        .changeButton {
+            button {
+                width: 186px;
+
+            }
+        }
+    }
+
+
+
+    .promotionToolArea {
+        padding: 0;
+        margin-top: 50px;
+
+        .qrCodeWidgit {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    .promotionToolArea {
+        padding: 0;
+        margin-top: 50px;
+
+        .qrCodeWidgit {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+
+    .promotionToolArea {
+        padding: 0;
+        margin-top: 50px;
+
+        .qrCodeWidgit {
+            width: 120px;
+            height: 120px;
+        }
+    }
+}

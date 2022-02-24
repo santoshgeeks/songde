@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="nabar p-0" >
+       <div class="row navBarRow">
+        <div class="side bg-light d-inline-block" *ngIf="openProfile">
+            <a routerLink="/promotion-home" >promotion</a><br>
+            <!-- <a routerLink="/profile" (click)="openProfile=!openProfile">profile</a> -->
+            </div>
+        <!-- <div class="side bg-light d-inline-block" routerLink="/profile" >  promotion</div> -->
+        <div class="main p-0 d-inline-block right"  [ngClass]="{'right1':!openProfile}">
+            <router-outlet></router-outlet>
+        </div>
+       </div>
+    </div>
+</div>
+

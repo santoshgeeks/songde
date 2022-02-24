@@ -1,0 +1,174 @@
+.section-1 {
+    .box-with-border {
+        background: #F9F9F9;
+        border: 1px solid #ECECEC;
+        box-sizing: border-box;
+        border-radius: 23px;
+        padding: 13px 15px 15px 8px;
+        margin-top: 45px;
+
+        .musicImage {
+            border-radius: 10px;
+        }
+
+        .songName {
+            padding: 0;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 140%;
+            color: #222222;
+        }
+
+        .publishedOn {
+            padding: 0;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 170%;
+            color: rgba(34, 34, 34, 0.8);
+        }
+
+        .clapAndPlay {
+            padding: 0;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 170%;
+            color: #989AA3;
+
+            img {
+                cursor: pointer;
+            }
+        }
+
+        .changeButton {
+            display: flex;
+            align-items: center;
+            position: relative;
+            button{
+                width: 215px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            .selectTrack {
+                background: #FFFFFF;
+                border-radius: 10px;
+                width: 230px;
+                height: 191px;
+                overflow-y: auto;
+
+                .songName {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #222222;
+                    padding: 0px;
+                }
+
+                .disc {
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 10px;
+                    line-height: 15px;
+                    color: #222222;
+                    padding: 0px;
+                }
+
+                img {
+                    border-radius: 10px;
+                }
+
+
+            }
+        }
+    }
+
+    #style-4::-webkit-scrollbar-track {
+        -webkit-box-shadow: rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+    }
+
+    #style-4::-webkit-scrollbar {
+        width: 5px;
+        background-color: #F5F5F5;
+    }
+
+    #style-4::-webkit-scrollbar-thumb {
+        background: #E0E3EB;
+        // background-color: #000000;
+        border: 2px solid #E0E3EB;
+    }
+
+    
+
+    .chipsTab {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-top: 29px;
+        margin-bottom: 29px;
+
+        .chipTab {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            color: #222222;
+            padding: 2px 5px 2px 5px;
+            background: #FFFFFF;
+            border: 1px solid #E0E3EB;
+            box-sizing: border-box;
+            border-radius: 100px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .chipTabActive {
+            background: #EFF1F6;
+            border: 1px solid #E0E3EB;
+            box-sizing: border-box;
+            border-radius: 100px;
+            color: #222222;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .section-1 {
+        .box-with-border{
+            .changeButton {
+                button{
+                    width: 186px;
+                   
+                }
+            }
+        }
+        
+    }
+    
+    .promotionToolArea {
+        padding: 0;
+        margin-top: 50px;
+
+        .qrCodeWidgit {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    }
+    
+    @media (max-width: 576px) {
+    
+        .promotionToolArea {
+            padding: 0;
+            margin-top: 50px;
+            .qrCodeWidgit {
+                width: 187px;
+                height: 187px;
+            }
+        }
+        }
