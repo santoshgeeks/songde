@@ -1,0 +1,1630 @@
+<section class="position-relative d-bloc profileSection">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="profileBg mt-5 position-relative">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="row">
+                            <div class="btn-group dropleft" data-toggle="dropdown" aria-haspopup="true">
+                                <img class="img-fluid" src="../../assets/profileImageAndIcon/elips.png" alt="">
+                                <div class="dropdown-menu">
+                                    <div class="item">
+                                        <a>Download Profile as Pdf</a>
+                                    </div>
+                                    <div class="item">
+                                        <a>Follow</a>
+                                    </div>
+                                    <div class="item">
+                                        <a>Report Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profileDetails">
+                    <div class="row mt-lg-4 mt-md-4 mt-0 w-100">
+                        <div class="col-lg-8 col-md-8 order-lg-1 order-md-1 order-2 ">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-5 col-12">
+                                    <div class="profile">
+                                        <img class="profileImg" [src]="profileImageUrl" alt="">
+                                        <div class="profileHover">
+                                            <div class="profileAction">
+                                                <img data-bs-toggle="modal" data-bs-target="#setPhoto"
+                                                    src="../../assets/icons/camara.png" alt="" (click)="seteProfile()">
+                                                <img data-bs-toggle="modal" data-bs-target="#editProfile"
+                                                    src="../../assets/profileImageAndIcon/edit.png" alt="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-12 px-md-0">
+                                    <div class="name">James Kumar</div>
+                                    <div class="profileNameAndLoacation">
+                                        <div class="row">
+                                            <span class="px-0">
+                                                <img class="me-2" src="../../assets/profileImageAndIcon/music.png"
+                                                    alt="">
+                                                <span>Singer, Composer </span>
+                                            </span>
+                                        </div>
+                                        <div class="row marginT">
+                                            <span class="px-0">
+                                                <img class="me-2" src="../../assets/profileImageAndIcon/map.png" alt="">
+                                                <span>India, New Dalhi</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-lg-5 mt-md-5 mt-2">
+                                        <div
+                                            class="d-flex justify-content-lg-start justify-content-md-start justify-content-around col-lg-6 col-md-6 col-12 order-lg-1 order-md-1 order-2 ps-0 px-md-0">
+                                            <button class="contactMe mt-lg-0 mt-md-0 mt-4"> Contact Me</button>
+                                        </div>
+                                        <div
+                                            class=" order-lg-2 justify-content-lg-start justify-content-md-start justify-content-center order-md-2 order-1 col-lg-6 col-md-6 col-12 d-flex mt-2 mt-md-3 pe-md-0">
+                                            <div class="circle">
+                                                <img class="" src="../../assets/profileImageAndIcon/mc.png" alt="">
+                                            </div>
+                                            <div class="circle">
+                                                <img class="" src="../../assets/profileImageAndIcon/digital.png" alt="">
+                                            </div>
+                                            <div class="circle">
+                                                <img class="" src="../../assets/profileImageAndIcon/ad.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 order-lg-2 order-md-2 order-1 d-flex social">
+                            <div class="socialMediaIcon">
+                                <img src="../../assets/profileImageAndIcon/instagram.png" alt="">
+                            </div>
+                            <div class="socialMediaIcon marginLeftRight">
+                                <img src="../../assets/profileImageAndIcon/facebook.png" alt="">
+                            </div>
+                            <div class="socialMediaIcon ">
+                                <img src="../../assets/profileImageAndIcon/twitter.png" alt="">
+                            </div>
+                            <div class="socialMediaIcon marginLeftRight">
+                                <img src="../../assets/profileImageAndIcon/applemusic.png" alt="">
+                            </div>
+                            <div class="socialMediaIcon">
+                                <img src="../../assets/profileImageAndIcon/spotify.png" alt="">
+                            </div>
+                            <div class="socialMediaIcon marginLeftRight">
+                                <img src="../../assets/profileImageAndIcon/youtube.png" alt="">
+                            </div>
+                            <div class="socialMediaIcon marginRight">
+                                <img src="../../assets/profileImageAndIcon/soundcloud.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12"></div>
+                        <div class="col-lg-9 col-md-12">
+                            <div class="row">
+                                <div class="availableArea">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-3">
+                                            <span class="af">Available for</span>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-5">
+                                            <div class="chip">
+                                                <span>
+                                                    <img class="me-2"
+                                                        src="../../assets/profileImageAndIcon/musicListners.png" alt="">
+                                                    Music licensing
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-4">
+                                            <div class="chip">
+                                                <span>
+                                                    <img class="me-2" src="../../assets/profileImageAndIcon/sliders.png"
+                                                        alt="">
+                                                    Production
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-lg-none d-md-none d-block col-3"></div>
+                                        <div class="col-lg-2 col-md-3 col-4">
+                                            <div class="chip mt-lg-0 mt-md-0 mt-3">
+                                                <span>
+                                                    <img class="me-2"
+                                                        src="../../assets/profileImageAndIcon/musicBlack.png" alt="">
+                                                    Live gigs
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="story">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="storySection d-flex">
+                    <div class="heading">Story</div>
+                    <div class="icons">
+                        <div class="circle">
+                            <img src="../../assets/profileImageAndIcon/view.png" alt="">
+                        </div>
+                        <div class="circle" data-bs-toggle="modal" data-bs-target="#story">
+                            <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-5 col-md-6 col-12 ps-0">
+                    <span class="details">
+                        Songdew TV is songdew's latest initiative. It is the only 24 hour satellite music television
+                        channel dedicated to showcasing PURE UNCORRUPTED MUSIC from some of the finest artists in India.
+                        The TV channel is for the young and young at heart music lovers who can enjoy numerous private
+                        albums that are not available in the mainstream media.
+                    </span>
+                    <div class="row d-lg-flex d-md-none">
+                        <div class="row p-0">
+                            <div class="pSet">
+                                Performance set
+                            </div>
+                        </div>
+                        <div class="row p-0 marginTop">
+                            <span>
+                                <img src="../../assets/profileImageAndIcon/languageIcon.png" alt="">
+                                <span style="margin-left: 7px;" class="lnaguages">Hindi, English</span>
+                            </span>
+                        </div>
+                        <div class="row p-0 marginTop">
+                            <span>
+                                <img src="../../assets/profileImageAndIcon/bmusic.png" alt="">
+                                <span class="lnaguages">Bollywood Covers, Hindi Original, Folk</span>
+                            </span>
+                        </div>
+
+                        <div class="row p-0 bandMembers">
+                            <div class="bmHeading px-0">Band Mebers</div>
+                            <div class="row px-0">
+                                <div class="col-lg-6 col-6 ps-0" *ngFor="let item of menbers">
+                                    <div class="membersName">
+                                        <img src="../../assets/profileImageAndIcon/user.png" alt="">
+                                        <span>{{item.name}} - {{item.experties}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-1 d-lg-block d-md-none"></div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="video">
+                        <video controls>
+                            <source src="../../assets/profileImageAndIcon/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-12 d-lg-none d-md-block d-block">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pSet">
+                                Performance set
+                            </div>
+                            <div class="row marginTop">
+                                <span>
+                                    <img src="../../assets/profileImageAndIcon/languageIcon.png" alt="">
+                                    <span style="margin-left: 7px;" class="lnaguages">Hindi, English</span>
+                                </span>
+                            </div>
+                            <div class="row marginTop">
+                                <span>
+                                    <img src="../../assets/profileImageAndIcon/bmusic.png" alt="">
+                                    <span class="lnaguages">Bollywood Covers, Hindi Original, Folk</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row bandMembers">
+                                <div class="bmHeading px-0">Band Mebers</div>
+                                <div class="row px-0">
+                                    <div class="col-md-6  ps-0" *ngFor="let item of menbers">
+                                        <div class="membersName">
+                                            <img src="../../assets/profileImageAndIcon/user.png" alt="">
+                                            <span>{{item.name}} - {{item.experties}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="achivmentSection">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="achivmentArea">
+                    <div class="achivmentHeding">
+                        <span>Achievements</span>
+                        <div class="icons">
+                            <div class="circle">
+                                <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                            </div>
+                            <div class="circle" data-bs-toggle="modal" data-bs-target="#achievements">
+                                <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achivmentBox">
+                        <div class="achivCard" *ngFor="let item of achievements">
+                            <div class="hrLine"> </div>
+                            <div class="winnerPosition"> {{item.winnerPosition}} </div>
+                            <div class="disc"> {{item.disc}} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="recievingBusiness">
+    <div class="row pb-5">
+        <div class="col-lg-1 col-md-12 d-lg-block d-md-block d-none "></div>
+        <div class="col-lg-11 col-md-12 col-12">
+            <div class="row ">
+                <div class="col-lg-11 col-md-10 col-12 order-lg-1 order-md-1 order-2  bg">
+                    <div class="reBuEn">
+                        <div class="row">
+                            <div class="heading text-center">Receiving Business Enquireies For</div>
+                        </div>
+                        <div class="row details">
+                            <div class="col-lg-2 col-md-3 col-6 ms-auto">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-5 col-4">
+                                        <div class="img">
+                                            <img class="image" src="../../assets/profileImageAndIcon/musicListners.png"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-8">
+                                        <div class="rcbItem">Music Licensing</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-6">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-5 col-4">
+                                        <div class="img">
+                                            <img class="image" src="../../assets/profileImageAndIcon/sliders.png"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-8">
+                                        <div class="rcbItem" style="margin-top: 10px;">Production</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-6 me-lg-auto mt-lg-0 me-md-auto mt-md-0 mx-auto mt-4">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-4">
+                                        <div class="img">
+                                            <img class="image" src="../../assets/profileImageAndIcon/musicBlack.png"
+                                                alt="">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-8">
+                                        <div class="rcbItem" style="margin-top: 10px;">Live Gigs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="details">
+                            <div class="icons">
+                                <div class="items">
+                                </div>
+                                <div class="items middle">
+                                    
+                                   
+                                </div>
+                                <div class="items">
+                                   
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="button">
+                            <button class="contactButton">Contact</button>
+                        </div>
+                        <div class="rightBg">
+                            <img class="d-lg-block d-md-block d-none"
+                                src="../../assets/profileImageAndIcon/Rectangle 2172.png" alt="">
+                            <img class="d-lg-none d-md-none d-block"
+                                src="../../assets/profileImageAndIcon/Rectanglesm.png" alt="">
+                        </div>
+                        <div class="rightLg">
+                            <img class="d-lg-block d-md-block d-none"
+                                src="../../assets/profileImageAndIcon/Rectangle 2174.png" alt="">
+                            <img class="d-lg-none d-md-none d-block"
+                                src="../../assets/profileImageAndIcon/Rectanglesmleft.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-1 col-md-2 col-12 px-0 order-lg-2 order-md-2 order-1">
+                    <div class="sectionHeading">
+                        <div class="action">
+                            <div class="circle ms-lg-0 ms-md-0 ms-auto">
+                                <img src="../../assets/profileImageAndIcon/view.png" alt="">
+                            </div>
+                            <div class="circle" data-bs-toggle="modal" data-bs-target="#businessEnquiries">
+                                <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="music-section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row p-0">
+                <div class="heading">
+                    <div class="head">Music</div>
+                    <div class="maction">
+                        <div class="circle">
+                            <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                        </div>
+                        <div class="circle" data-bs-toggle="modal" data-bs-target="#music">
+                            <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-0">
+                    <div class="col-lg-6 col-md-12 col-12 ps-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12 ps-lg-0">
+                                <div class="playingAdioImage text-lg-start text-md-start text-center">
+                                    <img class="img-fluid largBanner" [src]="playingTrack.banner" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 text-lg-start text-md-start text-center">
+                                <div class="row"><span class="album">Album</span></div>
+                                <div class="row"><span class="titel">Just the Way</span></div>
+                                <div class="row"><span class="length"> {{musicTracks.length}} Tracks</span></div>
+                                <div class="row">
+                                    <button class="playButton mx-lg-0 mx-md-0 mx-auto">
+                                        <img class="me-3" src="../../assets/musicImages/activePlayButton.png" alt="">
+                                        <span> Play</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-12 p-0 ">
+                                <div class="row">
+                                    <div class="listedTrack" id="style-4">
+                                        <div class="row track" *ngFor="let item of musicTracks; let i=index">
+                                            <div class="col-lg-1 col-md-1 col-1"> {{i+1}} </div>
+                                            <div class="col-lg-1 col-md-1 col-1">
+                                                <div class="play" *ngIf="!item.isPlaying">
+                                                    <img src="../../assets/musicImages/play.png" alt="">
+                                                </div>
+                                                <div class="pause" *ngIf="item.isPlaying">
+                                                    <img style="margin-right:1px"
+                                                        src="../../assets/musicImages/pause.png" alt="">
+                                                    <img style="margin-left:1px"
+                                                        src="../../assets/musicImages/pause.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7 col-md-7 col-7">
+                                                <span class="trackName"> {{item.songName}} </span>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-2">
+                                                <div class="trackName"> {{item.duration}}</div>
+
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-1">
+                                                <img src="../../assets/musicImages/ellips.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12 p-0 popularTack">
+                        <div class="row ">
+                            <span class="pheading">popular tracks</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6 col-12" *ngFor="let item of popularTracs">
+                                <div class="row marginInTrack">
+                                    <div class="col-lg-2 col-md-3 col-3">
+                                        <div class="bannerImag">
+                                            <img class="img-fluid" [src]="item.banner" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10 col-md-9 col-9 ps-0">
+                                        <div class="row mt-2">
+                                            <span class="trackHeader"> {{item.songName}} </span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="discription"> {{item.disc}} </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="videoSection">
+    <div class="row">
+        <div class="sectionHeading">
+            <span class="head">Video</span>
+            <div class="action">
+                <div class="circle">
+                    <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                </div>
+                <div class="circle" data-bs-toggle="modal" data-bs-target="#video">
+                    <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <ng-container *ngFor="let item of listOfVideos; let i=index">
+            <div class="perent col-lg col-md col-12" [ngClass]="{'center1': i==0 || i==2}">
+                <video class="w-100 videoTag" [ngClass]="{'middle': i==1}">
+                    <source [src]="item.videoLink" type="video/mp4">
+                </video>
+                <div class="" [ngClass]="{'transpArentDiveOnVideo': i==0 || i==2, 'OnVideo' : i==1}">
+                    <div class="row nameAndTrack">
+                        <div class="sName"> <span class="ms-2">{{item.videoName}}</span> </div>
+                        <div class="arName"> <span class="ms-2">{{item.artistName}}</span> </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</section>
+<section class="photosection">
+    <div class="row">
+        <div class="sectionHeading">
+            <span class="head">Photo</span>
+            <div class="action">
+                <div class="circle">
+                    <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                </div>
+                <div class="circle" data-bs-toggle="modal" data-bs-target="#photo">
+                    <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row position-relative">
+        <div class="col-3 d-lg-flex d-md-flex d-none" *ngFor="let item of photo">
+            <div class="photo">
+                <img class="img-fluid" [src]="item.banner" alt="">
+            </div>
+        </div>
+        <div class="col-3 d-lg-flex d-md-flex d-none position-absolute numberContainer numberContainerBG">
+            <div class="upperContaints"> +{{allPhotos.length-photo.length}} </div>
+        </div>
+        <div class="scrollInsmall d-lg-none d-md-none d-flex">
+            <div class="photo" *ngFor="let item of photo">
+                <img class="img-fluid" [src]="item.banner" alt="">
+            </div>
+            <div class="righclick msgCardScrollWrapper" id="content" #widgetsContent>
+                <div class="arrow msgCardDeck" (click)="toTop($event)">
+                    <img src="../../assets/profileImageAndIcon/rightArrow.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 col-md-12 col-12  order-lg-1 order-md-2 order-2">
+            <div class="userNote">
+                <div class="invertedComa">
+                    <img src="../../assets/photo/invertedComa.png" alt="">
+                </div>
+                <div class="note">
+                    Stuck in our homes, we have all faced solitude and darkness. When the whole world stopped in
+                    2020, music was still being created.
+                </div>
+                <div class="name">
+                    James Kumar
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 order-lg-2 order-md-1 order-1">
+            <div class="sectionHeading">
+                <div class="action">
+                    <div class="circle">
+                        <img src="../../assets/profileImageAndIcon/view.png" alt="">
+                    </div>
+                    <div class="circle" data-bs-toggle="modal" data-bs-target="#quote">
+                        <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="livePr">
+    <div class="row">
+        <div class="col-lg-2 col-md-12"></div>
+        <div class="col-lg-10 col-md-12 col-12">
+            <div class="psectionHeading">
+                <span class="head">Live Performaces</span>
+                <div class="action">
+                    <div class="circle">
+                        <img src="../../assets/profileImageAndIcon/view.png" alt="">
+                    </div>
+                    <div class="circle" data-bs-toggle="modal" data-bs-target="#livePerformance">
+                        <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-12"></div>
+        <div class="col-lg-8 col-md-12 col-12">
+            <div class="performence" *ngFor="let item of livePerformance; let last=last">
+                <div class="row padArea" [ngClass]="{'hrLine': !last}">
+                    <div class="col-lg-2 col-2 col-md-2">
+                        <div class="dateMonth">
+                            <div class="row">
+                                <div class="day">{{item.day}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="month">{{item.month}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 flexDesplay d-lg-block d-md-block d-none">
+                        <div class="eventName">
+                            {{item.eventName}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 flexDesplay d-lg-block d-md-block d-none">
+                        <div class="location">
+                            <span>
+                                <img src="../../assets/photo/location.png" alt="">
+                                {{item.place}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-9 d-lg-none d-md-none d-block">
+                        <div class="row">
+                            <div class="eventName">
+                                {{item.eventName}}
+                            </div>
+                            <div class="location">
+                                <span>
+                                    <img src="../../assets/photo/location.png" alt="">
+                                    {{item.place}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-1 flexDesplay">
+                        <div class="year">
+                            {{item.year}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="inPress">
+    <div class="row">
+        <div class="sectionHeading">
+            <span class="head">In Press</span>
+            <div class="action">
+                <div class="circle">
+                    <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                </div>
+                <div class="circle" data-bs-toggle="modal" data-bs-target="#inPress">
+                    <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6" *ngFor="let item of inpress">
+            <div class="detailsCard">
+                <div class="row">
+                    <span class="dHeading">
+                        <img src="../../assets/icons/book.png" alt="">
+                        <span class="detailsHeadin"> {{item.heading}} </span>
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="details">
+                        {{item.details}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="bythe">
+                        <span class="mainSpan">
+                            <span class="byG"> {{item.by}} </span>
+                            <span class="date">{{item.byTheDate}}</span>
+                            <span class="link">
+                                <img src="../../assets/icons/shareLink.png" alt="">
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="AssetsForDownload">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-9 col-md-12 col-12 order-lg-1 order-md-2 order-2">
+            <div class="assetsBox">
+                <div class="row">
+                    <div class="aHeading">
+                        Assets for download
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="allChips">
+                        <div class="row">
+                            <div class="chips me-lg-3 mt-md-2 mx-md-1 col-lg col-md col-12 marginSm"
+                                *ngFor="let item of assetsForDownload">
+                                <span>
+                                    <img [src]="item.icon" alt="">
+                                    <span class="text"> {{item.assetName}} </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-2 col-md-12 col-12 order-lg-2 order-md-1 order-1">
+            <div class="sectionHeading" style="margin-top:0px">
+                <div class="action">
+                    <div class="circle">
+                        <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                    </div>
+                    <div class="circle" data-bs-toggle="modal" data-bs-target="#assets">
+                        <img src="../../assets/profileImageAndIcon/edit.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- modals/ popups -->
+
+<!-- profile Edit Popup -->
+
+<div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <h5 class="modal-title" id="exampleModalLabel">Basic information</h5>
+            </div>
+            <div class="modal-body">
+                <form class="w-100">
+                    <div class="row mrBottom">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Band name</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Category</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Country</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">City</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="modal-title sm">Social media</div>
+                        <div class="note">It is important to have your social media links on the profile. It helps you
+                            stand out.</div>
+                    </div>
+                    <div class="row mrBottom mrTop">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Instagram</label>
+                                <input type="text" placeholder="https://www.instagram.com/">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Twitter</label>
+                                <input type="text" placeholder="https://twitter.com/">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mrBottom">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Facebook</label>
+                                <input type="text" placeholder="https://www.facebook.com/">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <label for="">Youtube</label>
+                                <input type="text" placeholder="https://youtube.com/">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mrTop">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="row">
+                                <label for="">Personal website </label>
+                                <input type="text" placeholder="https://yourwebsitename.com/">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="modal-title badgesMargin">Badges</div>
+                    </div>
+                    <div class="row">
+                        <div class="listOfBadges">
+                            <div class="BcircleMg">
+                                <img class="img-fluid" src="../../assets/profileImageAndIcon/mc.png" alt="">
+                            </div>
+                            <div class="BcircleDigital">
+                                <img class="img-fluid" src="../../assets/profileImageAndIcon/digitalImg.png" alt="">
+                            </div>
+                            <div class="BcircleArist">
+                                <img class="img-fluid" src="../../assets/profileImageAndIcon/ad.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="submitButton">Save changes</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- upload profile photo popup -->
+<div class="modal fade" id="setPhoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <h5 class="modal-title" id="exampleModalLabel">Profile Picture</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+                        [aspectRatio]="4 / 3" format="png" (imageCropped)="imageCropped($event)"
+                        (imageLoaded)="imageLoaded($event)" (cropperReady)="cropperReady()"
+                        (loadImageFailed)="loadImageFailed()">
+                    </image-cropper>
+                    <img class="imgBeforUpload" *ngIf="imageChangedEvent==''" [src]="croppedImage" />
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="row">
+                            <div class="col-md-6 col-12 col-lg-6">
+                                <input type="file" #takeInput (change)="fileChangeEvent($event)" id="BtnBrowseHidden"
+                                    name="files" style="display: none;" />
+                                <label for="BtnBrowseHidden" class="LblBrowse">
+                                    <img class="uploadDelete" src="../../assets/profileImageAndIcon/upload.png" alt="">
+                                    Upload Photo
+                                </label>
+                            </div>
+                            <div class="col-md-6 col-12 col-lg-6">
+                                <label for="" class="LblBrowse marginLeft" (click)="deletPhoto()">
+                                    <img class="uploadDelete" src="../../assets/profileImageAndIcon/x-circle.png"
+                                        alt="">
+                                    Delete Photo
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- story popup -->
+<div class="modal fade" id="story" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Story</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <textarea name="" id="" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <h5 class="modal-title" id="exampleModalLabel">Cover</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <input type="text" placeholder="YouTube URL link for a video">
+                        <div class="or">Or</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col12">
+                        <div class="allchips">
+                            <div class="chipHeading">Choose</div>
+                            <div class="chipBody">Image</div>
+                            <div class="chipBody">Audio</div>
+                            <div class="chipBody">Video</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <h5 class="modal-title performenceTitel" id="exampleModalLabel">Performance Set</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="row">
+                            <label for="">Language</label>
+                            <div class="languagechipsInput">
+                                <div class="inputchips" *ngFor="let item of language; let i=index">
+                                    <span> {{item}}</span>
+                                    <span class="imgCross" (click)="deletLanguage(i)">
+                                        <img src="../../assets/profileImageAndIcon/x.png" alt="">
+                                    </span>
+                                </div>
+                                <select class="form-select" (change)="choosenLanguage($event)">
+                                    <option value="" [disabled]="true"></option>
+                                    <option value="Hindi">Hindi</option>
+                                    <option value="English">English</option>
+                                    <option value="Marathi">Marathi</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <label for="">Genre</label>
+                            <input type="text" placeholder="Multiple genres can be added separated">
+                        </div>
+                        <div class="row">
+                            <h5 class="modal-title performenceTitel" id="exampleModalLabel">Band Members</h5>
+
+                        </div>
+                        <div class="row">
+                            <div [formGroup]="bandMembersForm" class="row p-0">
+                                <div formArrayName="items" class="px-0"
+                                    *ngFor="let item of bandMembersForm.get('items').controls; let i = index;">
+                                    <div [formGroupName]="i" class="row">
+                                        <div class="col-lg-3 col-md-3 col-10 ps-0">
+                                            <label for="">Name</label>
+                                            <input type="text" formControlName="name" placeholder="name">
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-12 ps-0">
+                                            <label for="">Instrument</label>
+                                            <div class="languagechipsInput">
+                                                <div class="inputchips"
+                                                    *ngFor="let item of selectedInstrumentsList; let i=index">
+                                                    <span> {{item}}</span>
+                                                    <span class="imgCross">
+                                                        <img src="../../assets/profileImageAndIcon/x.png" alt="">
+                                                    </span>
+                                                </div>
+                                                <select class="form-select" formControlName="Instrument"
+                                                    (change)="chooseInstrument($event)">
+                                                    <option value="" [disabled]="true"></option>
+                                                    <option [value]="item" *ngFor="let item of instrumentsList">{{item}}
+                                                    </option>
+
+                                                </select>
+                                            </div>
+                                            <!-- <input type="text" formControlName="Instrument" placeholder="Item description"> -->
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-2">
+                                            <label for="" class="mt-1"></label>
+                                            <div class="action">
+                                                <div class="actionItem">
+                                                    <div class="circle">
+                                                        <img src="../../assets/profileImageAndIcon/activView.png"
+                                                            alt="">
+                                                    </div>
+
+                                                </div>
+                                                <div class="actionItem" (click)="deleteBrandMember(i)">
+                                                    <img src="../../assets/profileImageAndIcon/x-circle.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row px-0">
+                                <div class="addRowButton mt-1" (click)="addBandMembers()">
+                                    + Add member
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Achievements popups -->
+<div class="modal fade" id="achievements" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12 px-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Achievements</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div [formGroup]="achivmentForm" class="row p-0">
+                        <div formArrayName="items" class="px-0"
+                            *ngFor="let item of achivmentForm.get('items').controls; let i = index;">
+                            <div [formGroupName]="i" class="row">
+                                <div class="col-lg-4 col-md-4 col-10 ps-0">
+                                    <label for="">Title</label>
+                                    <input type="text" formControlName="title" placeholder="title">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-10 ps-0">
+                                    <label for="">Event</label>
+                                    <input type="text" formControlName="event" placeholder="event">
+                                </div>
+                                <div class="col-12 px-0 mt-1">
+                                    <div class="row">
+                                        <div class="delete px-0">
+                                            <span (click)="deleteAchivment(i)">
+                                                <img class="me-1" src="../../assets/profileImageAndIcon/x-circle.png"
+                                                    alt="">
+                                                <span class="deleteAchivment">Delete achievement</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row px-0">
+                        <div class="addRowButton mt-1" (click)="addAchivments()">
+                            + Add Achievement
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- business enquiry popup -->
+
+<div class="modal fade" id="businessEnquiries" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Business enquiries</h5>
+                    <span class="secondTitle">
+                        Please select the services you can be contacted for
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12" *ngFor="let item of businesEnquiries; let i=index">
+                        <div class="checkBox">
+                            <input (change)="checkedEnquiries($event,i)" class="form-check-input" type="checkbox"
+                                id="flexCheckChecked" [checked]="item.isSelected">
+                            <div [ngClass]="item.isSelected ? 'checkBoxLabelactive' : 'checkBoxLabel'">
+                                {{item.businessName}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- music popup   -->
+<div class="modal fade" id="music" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content p-0">
+            <div class="modal-header paddinglr paddingt">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row paddinglr">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Music</h5>
+                    <span class="secondTitle">
+                        Select a single/album/playlist to highlight on your profile
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body" id="style-5" style="height: 330px;overflow-y: auto;">
+                <div class="row tracklist paddinglr" [ngClass]="{'highlightedBg':item.highlighted}"
+                    *ngFor="let item of musicTracks">
+                    <div class="col-lg-1 col-md-1 col-1 shuffle">
+                        <div class="px-0 text-end">
+                            <img class="ms-auto" src="../../assets/profileImageAndIcon/shuffle.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-3">
+                        <img [src]="item.banner" alt="" class="w-100 trackBanner">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-6 trackAndTitle">
+                        <div class="row">
+                            <p class="trackTitle"> {{item.songName}} </p>
+                            <p class="albumtype"> {{item.albumType}} </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-2 highAndView ">
+                        <div class="action" *ngIf="!item.highlighted">
+                            <div class="circle" *ngIf="item.activeView">
+                                <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                            </div>
+                            <div class="deActiveCricle" *ngIf="item.view">
+                                <img src="../../assets/profileImageAndIcon/view.png" alt="">
+                            </div>
+                        </div>
+                        <div class="highlighted" *ngIf="item.highlighted">Highlighted</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row paddingb paddinglr">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- video popup -->
+<div class="modal fade" id="video" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content p-0">
+            <div class="modal-header paddinglr paddingt">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row paddinglr">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Video</h5>
+                    <span class="secondTitle">
+                        Select a video to highlight on your profile
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body" id="style-5" style="height: 330px;overflow-y: auto;">
+                <div class="row tracklist paddinglr" [ngClass]="{'highlightedBg':item.highlighted}"
+                    *ngFor="let item of listOfVideos">
+                    <div class="col-lg-1 col-md-1 col-1 shuffle">
+                        <div class="px-0 text-end">
+                            <img class="ms-auto" src="../../assets/profileImageAndIcon/shuffle.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-4">
+                        <img [src]="item.videoBanner" alt="" class="w-100 trackBanner">
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-6 trackAndTitle">
+                        <div class="row">
+                            <p class="trackTitle"> {{item.videoName}} </p>
+                            <!-- <p class="albumtype"> {{item.albumType}} </p> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-12 highAndView ">
+                        <div class="action" *ngIf="!item.highlighted">
+                            <div class="circle" *ngIf="item.activeView">
+                                <img src="../../assets/profileImageAndIcon/activView.png" alt="">
+                            </div>
+                            <div class="deActiveCricle" *ngIf="item.view">
+                                <img src="../../assets/profileImageAndIcon/view.png" alt="">
+                            </div>
+                        </div>
+                        <div class="highlighted" *ngIf="item.highlighted">Highlighted</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row paddingb paddinglr">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- photo popup -->
+
+<div class="modal fade" id="photo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12 px-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Photos</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="flexPhotoContainer">
+                        <div class="photoItems" *ngFor="let item of allPhotos">
+                            <img class="w-100" [src]="item.banner" alt="">
+                        </div>
+                        <div class="uploadImage">
+                            <input type="file" #takeInput2 (change)="fileChangeEvent($event)" id="BtnBrowseHidden"
+                                name="files" style="display: none;" />
+                            <label class="text-center" for="BtnBrowseHidden">
+                                <img src="../../assets/profileImageAndIcon/uploadImage.png" alt="">
+                                <div>Upload photo</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- quote popup -->
+<div class="modal fade" id="quote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Quote</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="row mt-3">
+                            <label for="">Quote</label>
+                            <textarea name="" id="" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <label for="">Author</label>
+                        <input type="text">
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-12">
+                        <label for="">URL link</label>
+                        <input type="text" placeholder="URL link (if applicable)">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg">
+                        <span class="LblBrowse">
+                            <img style="margin-right: 15px;" class="mr-2"
+                                src="../../assets/profileImageAndIcon/x-circle.png" alt="">
+                            <span style="font-size: 10px;">Delete quote</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- live performance popup -->
+
+
+<div class="modal fade" id="livePerformance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Live performances</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div [formGroup]="liveperformancetForm" class="row p-0">
+                        <div formArrayName="items" class="px-0"
+                            *ngFor="let item of liveperformancetForm.get('items').controls; let i = index;">
+                            <div [formGroupName]="i" class="row mt-4">
+                                <div class="col-lg-2 col-md-6 col-12">
+                                    <label for="">Date</label>
+                                    <input type="date" formControlName="date" placeholder="">
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-12  mt-2">
+                                    <div class="row">
+                                        <label for="">Year</label>
+                                        <select class="form-select" formControlName="year">
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">Country</label>
+                                        <select class="form-select" formControlName="country">
+                                            <option value="1">India</option>
+                                            <option value="2">USA</option>
+                                            <option value="3">UEA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">City</label>
+                                        <input type="text" formControlName="city" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="row mt-3">
+                                        <label for="">Event</label>
+                                        <input type="text" formControlName="event" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12 col-12">
+                                    <div class="row">
+                                        <div class="delete px-0">
+                                            <span (click)="deleteLivePEvent(i)">
+                                                <img class="me-1" src="../../assets/profileImageAndIcon/x-circle.png"
+                                                    alt="">
+                                                <span class="deleteAchivment">Delete achievement</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row px-0">
+                        <div class="col-lg">
+                            <div class="addRowButton mt-1" (click)="addLivePerformance()">
+                                + Add event
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- in press popup -->
+
+<div class="modal fade" id="inPress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Story</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div [formGroup]="inPressForm" class="row p-0">
+                        <div formArrayName="items" class="px-0"
+                            *ngFor="let item of inPressForm.get('items').controls; let i = index;">
+                            <div [formGroupName]="i" class="row mt-4">
+                                <div class="col-lg-6 col-md-6 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">Source</label>
+                                        <input type="text" formControlName="source" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12  mt-2">
+                                    <div class="row">
+                                        <label for="">Date</label>
+                                        <input type="date" formControlName="date" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">Title</label>
+                                        <input type="text" formControlName="title" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">Link</label>
+                                        <input type="text" formControlName="link" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">Quote</label>
+                                        <input type="text" formControlName="quote" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12 col-12 ">
+                                    <div class="row mt-2">
+                                        <div class="delete px-0">
+                                            <span (click)="deleteArticale(i)">
+                                                <img class="me-1" src="../../assets/profileImageAndIcon/x-circle.png"
+                                                    alt="">
+                                                <span class="deleteAchivment">Delete article</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="hrlineInPress"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row px-0">
+                        <div class="col-lg">
+                            <div class="addRowButton mt-1" (click)="addInPressArtical()">
+                                + Add article
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- assets for downLoad popup -->
+
+
+<div class="modal fade" id="assets" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Assets for download</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <input accept=".pdf, .png, .jpeg" type="file" #takeInputLogo (change)="fileChangeEventjpeg($event)" id="logjpeg"
+                            name="files" style="display: none;" />
+                        <label for="" class="assetsLabel">Logotipe</label>
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="uploadBtn" [ngClass]="jpegFile==''? 'uploadBtn' : 'pt-0 ps-0 pe-0'">
+                                <div class="row" *ngIf="jpegFile!=''">
+                                    <div class="col-12 text-end">
+                                        <img src="../../assets/profileImageAndIcon/x.png" alt="">
+                                    </div>
+                                </div>
+                                <label *ngIf="jpegFile==''" for="logjpeg">Upload logo</label>
+                                <div class="row pb-2" *ngIf="jpegFile!=''">
+                                    <div class="col-4">
+                                        <img *ngIf="jpegFile!=''" src="../../assets/profileImageAndIcon/jpeg.png"
+                                            alt="">
+                                    </div>
+                                    <div class="col-8 ps-0">
+                                        <div class="row">
+                                            <span *ngIf="jpegFile!=''" class="logo">Logo.jpeg</span>
+                                        </div>
+                                        <div class="row">
+                                            <div *ngIf="jpegFile!=''" class="size">244 KB</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>
+                                <img (click)="resetGpeg()" *ngIf="jpegFile!=''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/rotate-cw.png" alt="">
+                                <img *ngIf="jpegFile==''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/upload.png" alt="">
+                            </span>
+                        </div>
+
+                        <div class="note">Files in jpeg, PNG, PDF format upto to 1 MB can be uploaded </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <input type="file" accept=".pdf" #takeInputpdf (change)="fileChangeEventpdf($event)" id="pdf" name="files"
+                            style="display: none;" />
+                        <label for="pdf" class="assetsLabel">Tech rider</label>
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="uploadBtn" [ngClass]="pdfFile==''? 'uploadBtn' : 'pt-0 ps-0 pe-0'">
+                                <div class="row" *ngIf="pdfFile!=''">
+                                    <div class="col-12 text-end">
+                                        <img src="../../assets/profileImageAndIcon/x.png" alt="">
+                                    </div>
+                                </div>
+                                <label *ngIf="pdfFile==''" for="pdf">Upload tech rider</label>
+                                <div class="row pb-2" *ngIf="pdfFile!=''">
+                                    <div class="col-4">
+                                        <img *ngIf="pdfFile!=''" src="../../assets/profileImageAndIcon/pdf.png" alt="">
+                                    </div>
+                                    <div class="col-8  ps-0">
+                                        <div class="row">
+                                            <span *ngIf="pdfFile!=''" class="logo">Techrider.pdf </span>
+                                        </div>
+                                        <div class="row">
+                                            <div *ngIf="pdfFile!=''" class="size">1.1 MB</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>
+                                <img (click)="resetPdf()" *ngIf="pdfFile!==''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/rotate-cw.png" alt="">
+                                <img *ngIf="pdfFile==''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/upload.png" alt="">
+                            </span>
+                        </div>
+                        <div class="note">
+                            Files in PDF format upto to 5 MB can be uploaded
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <section>
+    <app-footer></app-footer>
+</section> data-bs-toggle="modal" data-bs-target="#assets"-->
+
+<div class="modal fade" id="" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Story</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="row px-0">
+                        <div class="addRowButton mt-1" (click)="addBandMembers()">
+                            + Add member
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

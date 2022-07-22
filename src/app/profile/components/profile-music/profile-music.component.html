@@ -1,0 +1,453 @@
+<section class="music-section">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-12 px-0">
+            <div class="heading d-md-flex d-lg-flex d-flex">
+                <div class="head">Music</div>
+                <div class="maction">
+                    <div class="circle this" [ngClass]="!musicarea ? 'Activecircle' : 'circle' "
+                        (click)="hideUnHide()">
+                        <img *ngIf="musicarea" src="../../../../assets/profileImageAndIcon/view.svg" alt="">
+                        <img *ngIf="!musicarea" src="../../../../assets/profileImageAndIcon/activView.svg" alt="">
+                    </div>
+                    <!-- <div class="circle">
+                        <img src="../../assets/profileImageAndIcon/activView.svg" alt="">
+                    </div> -->
+                    <div class="circle" data-bs-toggle="modal" data-bs-target="#music">
+                        <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 px-0">
+            <div class="heading d-md-none d-lg-flex d-none">
+                <div class="maction">
+                    <div [ngClass]="!popularSection ? 'Activecircle' : 'circle' "
+                    (click)="hideUnHidePopular();popularSection=!popularSection">
+                        <img *ngIf="popularSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="">
+                        <img *ngIf="!popularSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="">
+                    </div>
+    
+                    <div class="circle" data-bs-toggle="modal" data-bs-target="#songs">
+                        <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-0" *ngIf="selectedAlbum">
+            <div class="col-lg-6 col-md-12 col-12 " *ngIf="!musicarea">
+                <div class="row">
+                    <div class="col-lg-6 col-md-3 col-12 ps-lg-0 pe-lg-2 px-md-0 px-0">
+                        <div class="playingAdioImage text-lg-start text-md-start text-center">
+                            <img class="w-100 h-100 largBanner" [src]="selectedAlbum.cover_pic" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-3 col-12 text-lg-start text-md-start text-center">
+                        <div class="row"><span class="album">Album</span></div>
+                        <div class="row"><span class="titel"> {{selectedAlbum.title}} </span></div>
+                        <div class="row"><span class="length"> {{selectedAlbum.db_count}} Tracks</span>
+                        </div>
+                        <div class="row">
+                            <div class="button">
+                                <button (click)="playAlbum()" class="playButton mx-lg-0 mx-md-0 mx-auto">
+                                    <!-- (click)="playAlbum();isPlayAlbum=!isPlayAlbum" -->
+                                    <img *ngIf="isPlayAlbum" class="me-2 img1"
+                                        src="../../assets/musicImages/activePlayButton.svg" alt="">
+                                    <img *ngIf="!isPlayAlbum" class="img2" src="../../assets/musicImages/pause.svg"
+                                        alt="">
+                                    <img *ngIf="!isPlayAlbum" class="me-2 img2" src="../../assets/musicImages/pause.svg"
+                                        alt="">
+                                    <span *ngIf="isPlayAlbum"> Play</span>
+                                    <span *ngIf="!isPlayAlbum"> Pause</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-6 col-12 ps-0">
+                        <div class="row">
+                            <div class="listedTrack">
+                                <div class="row trackRows trackScroller" id="style-4"
+                                    *ngIf="selectedAlbumTrackLength>0">
+                                    <audio controls id="myAudio" style="display: none;">
+                                        <source [src]="src" type="audio/ogg">
+                                        <source [src]="src" type="audio/mpeg">
+                                    </audio>
+                                    <ng-container>
+                                        <div class="row track"
+                                            *ngFor="let item of this.selectedAlbum.tracks; let i=index">
+                                            <div class="col-lg-1 col-md-1 col-1 itemFlex"> {{i+1}} </div>
+                                            <div class="col-lg-1 col-md-1 col-1 itemFlex">
+                                                <!-- <div id="timer">00:00</div> -->
+                                                <div class="play" *ngIf="!item.isPlaying">
+                                                    <img (click)="play(item,i,item.isPlaying=!item.isPlaying)"
+                                                        src="../../assets/musicImages/play.svg" alt="">
+                                                </div>
+
+                                                <div (click)="play(item,i,item.isPlaying=!item.isPlaying)" class="pause"
+                                                    *ngIf="item.isPlaying">
+                                                    <img style="margin-right:1px"
+                                                        src="../../assets/musicImages/pause.svg" alt="">
+                                                    <img style="margin-left:1px"
+                                                        src="../../assets/musicImages/pause.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <!-- <span class="trackName"> {{item.title}}</span> -->
+                                            <div class="col-lg-8 col-md-7 col-6 itemFlex">
+                                                <span class="trackName"> {{item.title}}</span>
+                                                <!-- <audio class="w-100" id='{{item.id}}' [src]="item.song_file"
+                                                            controls></audio> -->
+                                            </div>
+                                            <div class="col-lg-1 col-md-2 col-2 itemFlex">
+                                                <div class="trackName"> {{item.duration/60 | number : '1.2'}}
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-1 itemFlex">
+                                                <img src="../../assets/musicImages/ellips.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                                <div class="nodata" *ngIf="selectedAlbumTrackLength==0">
+                                    <p class="w-100 mx-auto mt-3 text-center">No tracks available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12 " *ngIf="musicarea"></div>
+            <div class="col-lg-6 col-md-12 col-12 p-0 popularTack">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 px-0">
+                        <div class="heading d-md-flex d-lg-none d-flex paddingINSmall">
+                            <!-- <div class="head">Music</div> -->
+                            <span class="pheading px-0">popular tracks</span>
+                            <div class="maction">
+                                <div  [ngClass]="!popularSection ? 'Activecircle' : 'circle' "
+                                (click)="hideUnHidePopular();popularSection=!popularSection">
+                                    <img *ngIf="popularSection" src="../../../../assets/profileImageAndIcon/view.svg"
+                                        alt="">
+                                    <img *ngIf="!popularSection"
+                                        src="../../../../assets/profileImageAndIcon/activView.svg" alt="">
+                                </div>
+                                <!-- <div class="circle">
+                                    <img src="../../assets/profileImageAndIcon/activView.svg" alt="">
+                                </div> -->
+                                <div class="circle" data-bs-toggle="modal" data-bs-target="#songs">
+                                    <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 px-0">
+                        <div class="ptrackhead d-lg-block d-none">Popular Tracks</div>
+                    </div>
+                    <div *ngIf="!popularSection" class="trackScroller  px-0"
+                        style="height: auto;overflow-y: auto; min-height: 280px;">
+                        <ng-container *ngFor="let item of listOfPopularSongs; let i=index">
+                            <div class="col-lg-12 col-md-6 col-12 px-0" *ngIf="item.is_highlighted">
+                                <div class="row marginInTrack">
+                                    <div class="col-lg-2 col-md-3 col-3 ps-0">
+                                        <div class="bannerImag float-start float-md-end float-lg-end">
+                                            <img class="img-fluid" [src]="item.image" alt="">
+                                            <div class="playAndPuase">
+                                                <div class="img" *ngIf="item.isPlaying"
+                                                    (click)="playPopularTrack(item,i);playPopular=!playPopular">
+                                                    <img src="../../../../assets/musicImages/whitePauseButton.svg"
+                                                        alt="">
+                                                </div>
+                                                <div class="img" *ngIf="!item.isPlaying"
+                                                    (click)="playPopularTrack(item,i);playPopular=!playPopular">
+                                                    <img src="../../../../assets/musicImages/whitePLyabutton.svg"
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                            <audio controls id="popularTrackMusic" style="display: none;">
+                                                <source [src]="popularSrc" type="audio/ogg">
+                                                <source [src]="popularSrc" type="audio/mpeg">
+                                            </audio>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-10 col-md-9 col-9 ps-0">
+                                        <div class="row mt-2">
+                                            <span class="trackHeader"> {{item.title}} </span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="discription">
+                                                <ng-container *ngFor="let item1 of item.artists; let last=last">
+                                                    <span> {{item1.username}}</span>
+                                                    <span *ngIf="!last">,</span>
+                                                </ng-container>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- music popup   -->
+<div class="modal fade" id="music" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content p-0">
+            <div class="modal-header paddinglr paddingt">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row paddinglr">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title paddinginsm" id="exampleModalLabel">Music</h5>
+                    <span class="secondTitle paddinginsm">
+                        Select a single album/playlist to highlight on your profile
+                    </span>
+                </div>
+            </div>
+            <div class="row paddinglr">
+                <div class="col-lg-12 px-0">
+                    <div class="row tabrow">
+                        <div (click)="tabChange(i)"
+                            [ngClass]="{'tabActive': item.isSelected,'tabDactive': !item.isSelected}" class="tab"
+                            *ngFor="let item of tabs; let i=index">
+                            {{item.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body" id="style-5" style="height: 330px;overflow-y: auto;" *ngIf="tabName=='Album'">
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <div #activeList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                            [cdkDropListData]="listOfAlbum" [cdkDropListConnectedTo]="[inactiveList]"
+                            (cdkDropListDropped)="drop($event)">
+                            <div style="cursor: pointer;" (click)="setHilightedAlbum(item,i)" class="row drag-box tracklist paddinglr
+                highlightedBg mb-2"
+                                [ngClass]="{'highlightedBg': item.is_highlighted,'unhilightedBg': !item.is_highlighted}"
+                                *ngFor="let item of listOfAlbum; let i=index" cdkDrag>
+                                <div class="col-lg-1 col-md-1 col-1 shuffle">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../assets/profileImageAndIcon/shuffle.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-3 ps-lg-2 ps-md-2 ps-0">
+                                    <div class="banner">
+                                        <img [src]="item.cover_pic" alt="" class="w-100">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-6 trackAndTitle">
+                                    <div class="row">
+                                        <p class="trackTitle"> {{item.title}} </p>
+                                        <p class="albumtype"> {{item.label}} </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-2 shuffle" *ngIf="item.is_highlighted">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../../../assets/icons/activeStar.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-2 shuffle" *ngIf="!item.is_highlighted">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../../../assets/icons/deactiveStar.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- {{head.title}} -->
+                            </div>
+                        </div>
+                        <div #inactiveList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                            [cdkDropListData]="listOfAlbum" [cdkDropListConnectedTo]="[activeList]"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="drag-box" cdkDrag>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body" id="style-5" style="height: 330px;overflow-y: auto;" *ngIf="tabName=='Playlist'">
+                <div class="row " style="margin-bottom:27px">
+                    <div class="col-md-12 px-0">
+                        <div #activeList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                            [cdkDropListData]="playLists" [cdkDropListConnectedTo]="[inactiveList]"
+                            (cdkDropListDropped)="drop($event)">
+                            <div style="cursor: pointer;" (click)="setHilightedPalylist(item,i)" class="row drag-box tracklist paddinglr
+          highlightedBg mb-2" [ngClass]="{'highlightedBg': item.is_highlighted,'unhilightedBg': !item.is_highlighted}"
+                                *ngFor="let item of playLists; let i=index" cdkDrag>
+                                <div class="col-lg-1 col-md-1 col-1 shuffle">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../assets/profileImageAndIcon/shuffle.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-3">
+                                    <div class="banner">
+                                        <img [src]="item.cover_pic" alt="No Image" class="w-100">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-6 trackAndTitle">
+                                    <div class="row">
+                                        <p class="trackTitle"> {{item.title}} </p>
+                                        <p class="albumtype">
+                                            <span>{{item.description}}</span>
+                                            <!-- <span *ngFor="let item1 of item.artists; let last=last">
+                      <span>{{item.description}}</span>
+                      </span>     -->
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-2 shuffle" *ngIf="item.is_highlighted">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../../../assets/icons/activeStar.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-2 shuffle" *ngIf="!item.is_highlighted">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../../../assets/icons/deactiveStar.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- {{head.title}} -->
+                            </div>
+                        </div>
+                        <div #inactiveList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                            [cdkDropListData]="playLists" [cdkDropListConnectedTo]="[activeList]"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="drag-box" cdkDrag>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row paddingb paddinglr">
+                <button type="button"
+                    class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto"
+                    data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="songs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content p-0">
+            <div class="modal-header paddinglr paddingt">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row paddinglr">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Song</h5>
+                    <span class="secondTitle">
+                        Select a Song to highlight on your profile
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="row paddinglr">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div (click)="tabChange(i)"
+                            [ngClass]="{'tabActive': item.isSelected,'tabDactive': !item.isSelected}" class="tab"
+                            *ngFor="let item of tabs; let i=index">
+                            {{item.name}}
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="modal-body" id="style-5" style="height: 330px;overflow-y: auto;" *ngIf="tabNameSong=='Songs'">
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <div #activeList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                            [cdkDropListData]="listOfPopularSongs" [cdkDropListConnectedTo]="[inactiveList]"
+                            (cdkDropListDropped)="drop($event)">
+                            <div style="cursor: pointer;" (click)="setHilightedSong(item,i)"
+                                class="row drag-box tracklist paddinglr highlightedBg mb-2"
+                                [ngClass]="{'highlightedBg': item.is_highlighted,'unhilightedBg': !item.is_highlighted}"
+                                *ngFor="let item of listOfPopularSongs; let i=index" cdkDrag>
+                                <div class="col-lg-1 col-md-1 col-1 shuffle">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../assets/profileImageAndIcon/shuffle.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-3 px-0">
+                                    <div class="banner">
+                                        <img [src]="item.image" alt="" class="w-100">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-6 trackAndTitle px-md-0 px-0">
+                                    <div class="row">
+                                        <p class="trackTitle"> {{item.title}} </p>
+                                        <p class="albumtype">
+                                            <ng-container *ngFor="let item1 of item.artists; let last=last">
+                                                <span> {{item1.username}}</span>
+                                                <span *ngIf="!last">,</span>
+                                            </ng-container>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-2 shuffle" *ngIf="item.is_highlighted">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../../../assets/icons/activeStar.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-2 shuffle" *ngIf="!item.is_highlighted">
+                                    <div class="px-0 text-end">
+                                        <img class="ms-auto" src="../../../../assets/icons/deactiveStar.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- {{head.title}} -->
+                            </div>
+                        </div>
+                        <div #inactiveList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                            [cdkDropListData]="listOfPopularSongs" [cdkDropListConnectedTo]="[activeList]"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="drag-box" cdkDrag>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row paddingb paddinglr">
+                <button type="button"
+                    class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto"
+                    data-bs-dismiss="modal" (click)="saveChangesSongs()">Save
+                    changes
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 
+<button style="display: none;" type="button" id="modalbutton" class="btn btn-primary" data-toggle="modal"
+    data-target="#exampleModalCenter">
+    Launch demo modal
+</button>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                {{alrettext}}
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <button type="button" class="btn btn-secondary" (click)="cancel()"
+                        data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="okPress()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="spinner-border text-primary spinner" role="status" *ngIf="isSpinner">
+    <span class="sr-only">Loading...</span>
+</div>

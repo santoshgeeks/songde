@@ -1,0 +1,458 @@
+.photosection {
+    .photo {
+        width: 288px;
+        height: 288px;
+        border-radius: 20px;
+
+        img {
+            border-radius: 20px;
+            object-fit: cover;
+            height: 100%;
+
+        }
+    }
+
+    .sectionHeading {
+        display: flex;
+        margin-top: 110px;
+        margin-bottom: 50px;
+
+        .head {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #222222;
+        }
+
+        .action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+
+            .circle {
+                border: 1px solid #E0E3EB;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+            .Activecircle {
+                border: 1px solid #9CB0F7;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+        }
+
+    }
+
+    .numberContainer {
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 287px;
+
+        .upperContaints {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 72px;
+            color: #FFFFFF;
+        }
+
+    }
+
+    .numberContainerBG {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) #c4c4c400;
+        border-radius: 20px;
+        max-width: 288px;
+        margin-right: 16px;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .userNote {
+        background: #EFF1F6;
+        border-radius: 20px;
+        margin-top: 127px;
+        padding: 40px;
+        position: relative;
+
+        .note {
+            border-radius: 20px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: #222222;
+        }
+
+        .name {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            color: #3D67FF;
+            margin-top: 12px;
+        }
+
+        .invertedComa {
+            top: -9%;
+            width: 55px;
+            position: absolute;
+
+        }
+
+    }
+}
+
+
+.uploadImage {
+    padding: 10px 10px;
+    // flex: 0 1 20%;
+    height: 116px;
+    width: 116px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.modal {
+    .modal-content {
+        .flexPhotoContainer {
+            .photoItems {
+                .actionHover {
+                    display: none;
+                }
+            }
+
+            .photoItems:hover {
+                .actionHover {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    margin-top: 10px;
+                    width: 116px;
+                    height: 116px;
+                    border-radius: 5px;
+                    background: #00000063;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .delete {
+                        text-align: center;
+                        // margin-top: 24px;
+                        cursor: pointer;
+                    }
+
+                    span {
+                        color: white;
+                        // margin-left: 13px;
+                    }
+                }
+            }
+
+            .image {
+                object-fit: fill;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .submitButton {
+        margin-top: 45px;
+    }
+}
+@media (max-width: 1024px) {
+
+    .photosection {
+        .photo {
+            width: 288px;
+            height: 200px;
+            border-radius: 20px;
+
+            img {
+                border-radius: 20px;
+                object-fit: cover;
+                height: 100%;
+
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+
+    .photosection {
+        .photo {
+            width: 288px;
+            height: 227px;
+            border-radius: 20px;
+
+            img {
+                border-radius: 20px;
+                object-fit: cover;
+                height: 100%;
+
+            }
+        }
+
+        .numberContainer {
+            min-height: 227px;
+            width: 229px;
+            margin-top: 8px;
+            margin-right: 0px;
+        }
+    }
+
+    .modal {
+        .modal-content {
+            .flexPhotoContainer {
+                margin-bottom: 43px;
+
+                .photoItems {
+                    // flex: 0 1 50%;
+                    width: 90px;
+                    height: 90px;
+
+                    .actionHover {
+                        display: none;
+                    }
+                }
+
+                .photoItems:hover {
+                    // flex: 0 1 50%;
+
+                    .actionHover {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        margin-top: 10px;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 5px;
+                        background: #00000063;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        span {
+                            p {
+                                line-height: 7px;
+
+                                img {
+                                    width: 13px;
+                                }
+                            }
+
+                            span {
+                                font-size: 8px;
+                            }
+                        }
+
+                        .delete {
+                            text-align: center;
+                            // margin-top: 24px;
+                            cursor: pointer;
+                        }
+
+                        span {
+                            color: white;
+                            // margin-left: 13px;
+                        }
+                    }
+                }
+
+                .uploadImage {
+                    // flex: 0 1 49%;
+                    width: 85px;
+                    height: 80px;
+
+                    label {
+                        font-size: 8px;
+                    }
+                }
+
+                .photNameUploaded {
+                    font-size: 8px;
+
+                    .crossPhoto {
+                        padding: 1px;
+                        height: 13px;
+                        font-size: 7px;
+                        width: 13px;
+                        text-align: center;
+
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 576px) {
+    .scrollInsmall {
+        overflow-x: auto;
+
+        .photo {
+            width: 227px;
+            height: 227px;
+            margin-right: 10px;
+
+            img {
+                width: 227px;
+                height: 227px;
+                object-fit: fill;
+            }
+        }
+    }
+
+    .modal {
+        .modal-content {
+            .flexPhotoContainer {
+
+                .photoItems {
+                    // width: 145px;
+                    // height: 145px;
+                    height: 280px;
+                    flex: 0 1 50%;
+                    flex-basis: 100%;
+
+                    .actionHover {
+                        display: none;
+                    }
+                }
+
+                .photoItems:hover {
+                    flex: 0 1 50%;
+                    flex-basis: 100%;
+
+                    .actionHover {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        margin-top: 10px;
+                        width: 96.5%;
+                        height: 96.5%;
+                        border-radius: 5px;
+                        background: #00000063;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .delete {
+                            text-align: center;
+                            // margin-top: 24px;
+                            cursor: pointer;
+                        }
+
+                        span {
+                            color: white;
+                            // margin-left: 16px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .uploadImage {
+                    width: 100%;
+                    height: 145px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .modal {
+        .modal-content {
+            .flexPhotoContainer {
+                .photoItems {
+                    // width: 151px;
+                    height: 190px;
+                }
+
+                .photoItems:hover {
+                    .actionHover {
+                        width: 96%;
+                        height: 95%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .modal {
+        .modal-content {
+            .flexPhotoContainer {
+                .photoItems {
+                    // width: 233px;
+                    height: 212px;
+                }
+
+                .photoItems:hover {
+                    .actionHover {
+                        width: 96%;
+                        height: 95%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .modal {
+        .modal-content {
+            .flexPhotoContainer {
+                .photoItems {
+                    // width: 233px;
+                    height: 145px;
+                }
+
+                .photoItems:hover {
+                    .actionHover {
+                        width: 95%;
+                        height: 93%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.photNameUploaded {
+    font-size: 14px;
+    padding: 0;
+    display: flex;
+
+    .crossPhoto {
+        margin-left: 5px;
+        cursor: pointer;
+        background: gray;
+        color: white;
+        padding: 5px;
+        border-radius: 50%;
+        margin-top: -2px;
+    }
+}

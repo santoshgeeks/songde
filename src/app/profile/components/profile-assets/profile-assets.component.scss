@@ -1,0 +1,134 @@
+
+.AssetsForDownload {
+    margin-top: 104px;
+    padding-bottom: 117px;
+
+    .sectionHeading {
+        display: flex;
+        margin-top: 102px;
+        margin-bottom: 10px;
+
+        .head {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #222222;
+        }
+
+        .action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+
+            .circle {
+                border: 1px solid #E0E3EB;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+            .Activecircle {
+                border: 1px solid #9CB0F6;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+                
+            }
+        }
+    }
+
+    .assetsBox {
+        height: 213px;
+        background: #F9F9F9;
+        box-shadow: 10px 20px 16px rgba(181, 187, 200, 0.15);
+        border-radius: 20px;
+
+        .aHeading {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: #222222;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .allChips {
+            justify-content: space-around;
+            align-items: center;
+
+            .chips {
+                background: #F9F9F9;
+                box-shadow: -5px -5px 10px #FFFFFF, 4px 5px 10px rgba(216, 218, 225, 0.7);
+                border-radius: 8px;
+                height: 41px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 16px;
+                padding-right: 16px;
+                cursor: pointer;
+
+                .text {
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 21px;
+                    text-transform: capitalize;
+                    color: #3D67FF;
+                    margin-left: 6px;
+                }
+            }
+        }
+
+    }
+}
+@media (max-width: 768px) {
+    .AssetsForDownload {
+        margin-top: 30px;
+        padding-bottom: 117px;
+        .assetsBox {
+            .allChips {
+                .chips{
+                    .text{
+                        font-size: 11px;
+                    }
+                }
+            }
+
+            height: 356px
+        }
+    }
+}
+@media (max-width: 576px) {
+    .AssetsForDownload {
+        margin-top: -18px;
+        padding-bottom: 117px;
+
+        .chips {
+            margin-bottom: 20px;
+        }
+
+        .assetsBox {
+            .aHeading {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            height: 356px
+        }
+    }
+}

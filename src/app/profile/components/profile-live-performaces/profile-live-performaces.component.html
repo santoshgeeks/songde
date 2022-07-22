@@ -1,0 +1,223 @@
+<section class="livePr">
+    <div class="row">
+        <div class="col-lg-2 col-md-12"></div>
+        <div class="col-lg-10 col-md-12 col-12">
+            <div class="psectionHeading">
+                <span class="head px-3">Live Performaces</span>
+                <div class="action">
+                    <div class="circle" 
+                    [ngClass]="!LivePerformanceSection ? 'Activecircle' : 'circle' "
+                    (click)="hideUnHide()">
+                        <img *ngIf="LivePerformanceSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="" >
+                        <img *ngIf="!LivePerformanceSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="" >
+                    </div>
+                    <!-- <div class="circle">
+                        <img src="../../assets/profileImageAndIcon/view.svg" alt="">
+                    </div> -->
+                    <div (click)="addExisting()" class="circle" data-bs-toggle="modal" data-bs-target="#livePerformance">
+                        <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-12"></div>
+        <div class="col-lg-8 col-md-12 col-12" *ngIf="!LivePerformanceSection">
+            <div class="performence" *ngFor="let item of listOfLivePerformence 
+            | paginate: { id: 'some_id',
+            itemsPerPage: pageSize,
+            currentPage: p,
+            totalItems: total }; let last=last">
+                <div class="row padArea" [ngClass]="{'hrLine': !last}">
+                    <div class="col-lg-2 col-2 col-md-2">
+                        <div class="dateMonth">
+                            <div class="row">
+                                <div class="day">{{item.performance_date | date:'dd'}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="month">{{item.performance_date | date:"MMM"}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 flexDesplay d-lg-flex d-md-flex d-none">
+                        <div class="eventName">
+                            {{item.title}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-3 flexDesplay d-lg-flex d-md-flex d-none">
+                        <div class="location">
+                            <span>
+                                <img src="../../assets/photo/location.svg" alt="">
+                                {{item.venue}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-7 d-lg-none d-md-none d-block">
+                        <div class="row">
+                            <div class="eventName">
+                                {{item.title}}
+                            </div>
+                            <div class="location">
+                                <span>
+                                    <img src="../../assets/photo/location.svg" alt="">
+                                    {{item.venue}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-2 col-3 flexDesplayRight">
+                        <div class="year">
+                            {{item.performance_date | date:"yyyy"}}
+
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-1 col-md-1 col-1 d-flex justify-content-between align-items-center">
+                        <i data-bs-toggle="modal" data-bs-target="#editlivePerformance" 
+                        
+                        class="fa fa-ellipsis-v editIcon"
+                            aria-hidden="true" (click)="editPerformence(item)"></i>
+                        <i (click)="deletePerformance(item)" class="fa fa-times-circle " aria-hidden="true"></i>
+                    </div> -->
+                    <!-- <div 
+                    class="col-lg-1 col-md-1 col-1 d-flex justify-content-center align-items-center">
+                   
+                </div> -->
+                </div>
+            </div>
+            <!-- <div class="row" *ngIf="listOfLivePerformence.length>0">
+                <pagination-controls id="some_id" (pageChange)="pageChanged($event)"
+                    (pageBoundsCorrection)="pageChanged($event)">
+                </pagination-controls>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="livePerformance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Live performances</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div [formGroup]="liveperformancetForm" class="row p-0">
+                        <div formArrayName="items" class="px-0"
+                            *ngFor="let item of liveperformancetForm.get('items').controls; let i = index;">
+                            <div [formGroupName]="i" class="row mt-4">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <label for="">Date</label>
+                                    <input type="date" dateInput='DD/MMM' formControlName="performance_date" placeholder="">
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">Country</label>
+                                        <select class="form-select" formControlName="country">
+                                            <option [value]="item.name" *ngFor="let item of listofCountry">{{item.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 mt-2">
+                                    <div class="row">
+                                        <label for="">City</label>
+                                        <input type="text" formControlName="venue" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="row mt-3">
+                                        <label for="">Event</label>
+                                        <input type="text" formControlName="title" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12 col-12">
+                                    <div class="row">
+                                        <div class="delete px-0">
+                                            <span (click)="deleteLivePEvent(i)">
+                                                <img class="me-1" src="../../assets/profileImageAndIcon/x-circle.svg"
+                                                    alt="">
+                                                <span class="deleteAchivment">Delete achievement</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row px-0">
+                        <div class="col-lg">
+                            <div class="addRowButton mt-1" (click)="addLivePerformance()">
+                                + Add event
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- edit modal -->
+<div class="modal fade" id="editlivePerformance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Live performances</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <label for="">Date</label>
+                        <input type="date" [(ngModel)]="editLivePerf.performance_date" >
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="row mt-1">
+                            <label for="">Title</label>
+                            <input type="text" [(ngModel)]="editLivePerf.performance_type" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="row mt-3">
+                            <label for="">City</label>
+                            <input type="text" [(ngModel)]="editLivePerf.venue" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="row mt-3">
+                            <label for="">Event</label>
+                            <input type="text" [(ngModel)]="editLivePerf.title" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-3">
+                <button type="button" class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto" data-bs-dismiss="modal" (click)="updateLivePerf()">Update
+                    changes
+                </button>
+            </div>
+        </div>
+  
+</div>
+
+</div><div class="spinner-border text-primary spinner" role="status" *ngIf="isSpinner">
+    <span class="sr-only">Loading...</span>
+</div>

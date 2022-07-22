@@ -1,0 +1,157 @@
+<div class="px-2">
+    <section class="listOfTrackUploaded mt-3" *ngIf="listOfMusic.length>0">
+        <div class="row">
+            <span class="heading">Promote your music</span>
+        </div>
+       <div class="row">
+           <div class="col-lg-8 px-0"> 
+            <div class="row listOftrack" [ngClass]="{'border-bottom-0':last}"
+            *ngFor="let item of listOfMusic;let last = last">
+                <div class="col-lg-7 col-md-7 px-0">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-3 ps-0">
+                            <img class="musicImage" [src]="item.songImage" alt="">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-9 lg-ps-3 md-ps-3 ps-0">
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-9 ">
+                                <div class="songName">
+                                    {{item.songName}}
+                                </div>
+                                <div class="publishedOn">
+                                    Published On: {{item.publishedOn}}
+                                </div>
+                                <div class="clapAndPlay  d-lg-flex d-md-flex  d-none">
+                                    <img class="me-2" src="../../assets/icons/Playingicon.svg" alt="">
+                                    <span class="me-2">{{item.noOfPlays}} plays</span>
+                                    <img class="me-2" src="../../assets/icons/Clapicon.svg" alt="">
+                                    <span class="me-2">{{item.noOfClaps}} claps</span>
+                                </div>
+                              </div>
+                                <div class="col-2 d-flex d-lg-none d-md-none">
+                                    <div class="elips">
+                                        <img class="" src="../../assets/icons/Fimorevertical.svg" alt="">
+                                    </div>
+                                    <div class="share">
+                                        <img class="margin" src="../../assets/icons/Fishare2.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-12 action-parent">
+                    <div class="action w-100">
+                        <div class="clapAndPlay  d-lg-none d-md-none  d-flex">
+                            <img class="me-2" src="../../assets/icons/Playingicon.svg" alt="">
+                            <span class="me-2">{{item.noOfPlays}} plays</span>
+                            <img class="me-2" src="../../../assets/icons/ClapIcon.svg" alt="">
+                            <span class="me-2">{{item.noOfClaps}} claps</span>
+                        </div>
+                        <div class="elips  d-lg-flex d-md-flex  d-none">
+                            <img class="" src="../../assets/icons/Fimorevertical.svg" alt="">
+                        </div>
+                        <div class="share  d-lg-flex d-md-flex  d-none">
+                            <img class="margin" src="../../assets/icons/Fishare2.svg" alt="">
+                        </div>
+                        <button class="pramotionButton" for="BtnBrowseHidden" routerLink="/promotion/promote">
+                            <img src="../../assets/icons/Anounce.svg" alt="">
+                            <span>Promote</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+           </div>
+       </div>
+    </section>
+    <section class="section-1 mt-3" *ngIf="listOfMusic.length==0">
+        <div class="row songPromotionProfile">
+            <div class="col-lg-5 col-md-12 col-12 d-lg-none d-md-block">
+                <div class="profile  mx-auto">
+                    <div class="upper">
+                        <img class="profile-Img" src="../../assets/image/Profile.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-12 px-0">
+                <div class="row margin">
+                    <span class="heading">Promote your music</span>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-xl-5 col-lg-8 col-md-6 col-9 px-0">
+                        <span class="disc">
+                            Upload / Distribute your first track to access promotional tools and take your music to more
+                            of
+                            your
+                            fans
+                        </span>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-12 px-0">
+                        <button class="distribute me-3">Distribute</button>
+                        <button class="upload" (click)="uploadMusicFile()">Upload</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-12 d-lg-block d-md-none d-none">
+                <div class="profile">
+                    <div class="upper">
+                        <img class="profile-Img" src="../../assets/image/Profile.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row geteverythingDics">
+            <div class="col-lg-9">
+                <div class="row">
+                    <span class="disc">Get everything you need to run your DIY Marketing Campaign at the click of a
+                        button</span>
+                </div>
+            </div>
+            <div class="col-lg-12 d-flex">
+                <div class="img">
+                    <img class="me-2 img-fluid" src="../../assets/icons/Righttick.svg" alt="">
+                </div>
+                <div class="textDiv">
+                    <span>Pitch your music for automised programming at Songdew TV</span>
+                </div>
+            </div>
+            <div class="col-lg-12 d-flex">
+                <div class="img">
+                    <img class="me-2 img-fluid" src="../../assets/icons/Righttick.svg" alt="">
+                </div>
+                <div class="textDiv">
+                    <span>Pitch your music to different Radio Stations</span>
+                </div>
+            </div>
+            <div class="col-lg-12 d-flex">
+                <div class="img">
+                    <img class="me-2 img-fluid" src="../../assets/icons/Righttick.svg" alt="">
+                </div>
+                <div class="textDiv">
+                    <span>Access your personalised QR Code</span>
+                </div>
+
+            </div>
+            <div class="col-lg-12 d-flex">
+                <div class="img">
+                    <img class="me-2 img-fluid" src="../../assets/icons/Righttick.svg" alt="">
+                </div>
+                <div class="textDiv">
+                    <span>Get customised banners for your release</span>
+                    <p>...And so much more!</p>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row promotionTool">
+            <app-promotion-tool style="padding: 0;"></app-promotion-tool>
+        </div>
+    </section>
+    <div class="row">
+        <!-- <app-footer></app-footer> -->
+    </div>
+</div>

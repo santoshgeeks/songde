@@ -1,0 +1,440 @@
+<section class="position-relative d-bloc profileSection" id="pdfD" #pdfD>
+    <div class="row d-flex justify-content-center align-items-center">
+
+        <div class="col-lg-12 col-md-12 col-12 height" *ngIf="userBasicDetails">
+            <div class="profileBg mt-5 position-relative"
+                [ngStyle]="userBasicDetails._cover_pic!='' ? {background: 'url(' + userBasicDetails._cover_pic+ ')'} : {background: 'url(/img/' + coverUrl+ ')'}">
+                <div class="row">
+                    <div class="hoverUpdateBgCover">
+                        <div class="updateBgCover mt-md-0 mt-lg-0 mt-5">
+                            <img (click)="editCoverPic(userBasicDetails)" data-bs-toggle="modal" style="width: 25px;"
+                                data-bs-target="#editBanner" src="../../assets/profileImageAndIcon/fi_edit.svg" alt="">
+                            <span (click)="editCoverPic(userBasicDetails)" data-bs-toggle="modal" 
+                            data-bs-target="#editBanner"
+                            class="editbanner ms-1" style="cursor:pointer;">Edit banner</span>
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-12 col-md-12 col-12" >
+                        <div class="row">
+                            <div class="btn-group dropleft" data-toggle="dropdown" aria-haspopup="true">
+                                <img class="img-fluid" src="../../assets/profileImageAndIcon/elips.svg" alt="">
+                                <div class="dropdown-menu">
+                                    <div class="item" (click)="savePdf()">
+                                        <a>Download Profile as Pdf</a>
+                                    </div>
+                                    <div class="item">
+                                        <a>Follow</a>
+                                    </div>
+                                    <div class="item">
+                                        <a>Report Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profileDetails">
+                    <div class="row mt-lg-4 mt-md-4 mt-0 w-100">
+                        <div class="col-lg-8 col-md-8 order-lg-1 order-md-1 order-2 ">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-5 col-12 pe-0 ">
+                                    <div class="profile">
+                                        <img class="profileImg" [src]="userBasicDetails._profile_pic" alt="">
+                                        <div class="profileHover">
+                                            <div class="profileAction">
+                                                <img data-bs-toggle="modal" data-bs-target="#setPhoto"
+                                                    src="../../assets/icons/camara.png" alt="" 
+                                                    (click)="seteProfile(userBasicDetails)">
+                                                <img data-bs-toggle="modal" data-bs-target="#editProfile" 
+                                                (click)="editBasicProfile(userBasicDetails)"
+                                                    src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-12 px-md-0" *ngIf="userBasicDetails">
+                                    <div class="name" *ngIf="userBasicDetails.user.slug_username"> {{userBasicDetails.user.slug_username}} </div>
+                                    <div class="profileNameAndLoacation"  [ngClass]="{'pb-3':userBasicDetails.country==null ,'pb-0':userBasicDetails.country!=null}">
+                                        <div class="row">
+                                            <span class="px-0">
+                                                <img class="me-2" src="../../assets/profileImageAndIcon/music.svg"
+                                                    alt="">
+                                                <span
+                                                    *ngFor="let item of userBasicDetails.user.artist_type; let last=last">
+                                                    <span> {{item}}</span>
+                                                    <span *ngIf="!last">,</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="row marginT">
+                                            <span class="px-0" >
+                                                <img class="me-2" src="../../assets/profileImageAndIcon/map.svg" alt="">
+                                                <span>{{userBasicDetails.country.name}},
+                                                    {{userBasicDetails.city.name}}
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row margin-Top" >
+                                        <div
+                                            class="d-flex justify-content-lg-start justify-content-md-start justify-content-around col-lg-6 col-md-6 col-12 order-lg-1 order-md-1 order-2 ps-0 px-md-0">
+                                            <button class="contactMe mt-lg-0 mt-md-0 mt-4"> Contact Me</button>
+                                        </div>
+                                        <div
+                                            class=" order-lg-2 justify-content-lg-start justify-content-md-start justify-content-center order-md-2 order-1 col-lg-6 col-md-6 col-12 d-flex mt-2 mt-md-3 pe-md-0">
+                                            <div class="circle" *ngFor="let item of opportunity">
+                                                <img class="" [src]="item.badge_image" [alt]="item.badge_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 order-lg-2 order-md-2 order-1 d-flex social"
+                            *ngIf="socialMediaLinks">
+                            <div class="socialMediaIcon">
+                                <a [attr.href]="socialMediaLinks.instagram_id" target="blank">
+                                    <img src="../../assets/profileImageAndIcon/instagram.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="socialMediaIcon marginLeftRight">
+                                <a [attr.href]="socialMediaLinks.facebook_id" target="blank">
+                                    <img src="../../assets/profileImageAndIcon/facebook.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="socialMediaIcon ">
+                                <a [attr.href]="socialMediaLinks.twitter_id" target="blank">
+                                    <img src="../../assets/profileImageAndIcon/twitter.svg" alt="">
+                                </a>
+
+                            </div>
+                            <div class="socialMediaIcon marginLeftRight">
+                                <a target="blank">
+                                    <img src="../../assets/profileImageAndIcon/applemusic.svg" alt="">
+                                </a>
+
+
+                            </div>
+                            <div class="socialMediaIcon">
+                                <a target="blank" [attr.href]="socialMediaLinks.spotify_id">
+                                    <img src="../../assets/profileImageAndIcon/spotify.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="socialMediaIcon marginLeftRight">
+                                <a [attr.href]="socialMediaLinks.youtube_id" target="blank">
+                                    <img src="../../assets/profileImageAndIcon/youtube.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="socialMediaIcon marginRight">
+                                <a target="blank">
+                                    <img src="../../assets/profileImageAndIcon/soundcloud.svg" alt="">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12"></div>
+                        <div class="col-lg-9 col-md-12 px-lg-2 px-md-2 px-0">
+                            <div class="row">
+                                <div class="availableArea">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-3 ps-lg-2 ps-md-2 ps-0  pe-lg-2 pe-md-2 pe-1">
+                                            <span class="af">Available for</span>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-5 col-3 px-lg-3 px-md-3 px-0">
+                                            <div class="chip">
+                                                <span>
+                                                    <img class="me-2"
+                                                        src="../../assets/profileImageAndIcon/musicListners.svg" alt="">
+                                                    <span>Music licensing</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-4 col-3 px-lg-2 px-md-2 px-1">
+                                            <div class="chip">
+                                                <span>
+                                                    <img class="me-2" src="../../assets/profileImageAndIcon/sliders.svg"
+                                                        alt="">
+                                                   <span> Production</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-lg-none d-md-none d-block col-3"></div>
+                                        <div class="col-lg-2 col-md-3 col-5">
+                                            <div class="chip mt-lg-0 mt-md-0 mt-3">
+                                                <span>
+                                                    <img class="me-2"
+                                                        src="../../assets/profileImageAndIcon/musicBlack.svg" alt="">
+                                                   <span> Live gigs</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                <h5 class="modal-title" id="exampleModalLabel">Basic information</h5>
+               </div>
+            </div>
+            <div class="modal-body">
+                <form class="w-100" [formGroup]="editBaciInfoForm">
+                    <div class="row mrBottom">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Artist / Band Name</label>
+                                <input formControlName="band_name" type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Category</label>
+                                <input formControlName="category"  type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Country</label>
+                                <select  formControlName="country">
+                                    <option *ngFor="let item of countryList" [value]="item.name">{{item.name}}</option>
+                                </select>
+                                <!-- <input  formControlName="country"  type="text"> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">City</label>
+                                <input  formControlName="city"  type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-12">
+                        <div class="modal-title sm">Social media</div>
+                        <div class="note px-0">It is important to have your social media links on the profile. It helps you
+                            stand out.</div>
+                       </div>
+                    </div>
+                    <div class="row mrBottom mrTop">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Instagram</label>
+                                <input formControlName="instagram_url" type="text" placeholder="https://www.instagram.com/">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Twitter</label>
+                                <input formControlName="twitter_url" type="text" placeholder="https://twitter.com/">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mrBottom">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Facebook</label>
+                                <input formControlName="facebook_url" type="text" placeholder="https://www.facebook.com/">
+                            </div>
+                        </div>
+                        <div class="col-lg-6  col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Youtube</label>
+                                <input formControlName="youtube_url" type="text" placeholder="https://youtube.com/">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mrTop">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Spotify</label>
+                                <input formControlName="spotify_url" type="text" placeholder="https://spotify.com">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="row">
+                                <label for="">Personal website </label>
+                                <input formControlName="website_url" type="text" placeholder="https://yourwebsitename.com/">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-12">
+                        <div class="modal-title badgesMargin">Badges</div>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="listOfBadges">
+                            <div class="BcircleMg" *ngIf="basicProfileDetails">
+                                <img class="img-fluid rounded-circle" [src]="basicProfileDetails.badge_image" alt="">
+                            </div>
+
+                            <!-- <div class="BcircleDigital">
+                                <img class="img-fluid" src="../../assets/profileImageAndIcon/digitalImg.svg" alt="">
+                            </div>
+                            <div class="BcircleArist">
+                                <img class="img-fluid" src="../../assets/profileImageAndIcon/ad.svg" alt="">
+                            </div> -->
+                        </div>
+                        <div class="" 
+                        (click)="activeBagageRadio=!activeBagageRadio"
+                        [ngClass]="activeBagageRadio? 'activeRadio' : 'deactiveRadio' "
+                        >
+                        <img *ngIf="activeBagageRadio" src="../../../../assets/profileImageAndIcon/activView.svg" alt="">
+                        <img *ngIf="!activeBagageRadio" src="../../../../assets/profileImageAndIcon/view.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button data-bs-dismiss="modal" class="submitButton" 
+                        (click)="editbasicInfor('basic_info')">Save changes</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- upload profile photo popup -->
+<div class="modal fade" id="setPhoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" (click)="deletPhoto()" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <h5 class="modal-title" id="exampleModalLabel">Profile Picture</h5>
+            </div>
+            <div class="modal-body" >
+                <div class="row">
+                    <image-cropper [imageChangedEvent]="imageChangedEvent" 
+                    class="w-100"
+                    *ngIf="imageChangedEvent!=''"
+                    [maintainAspectRatio]="true"
+                    [aspectRatio]="2 / 2" 
+                    accept="image/*"
+                    (imageCropped)="imageCropped($event)"
+                    (imageLoaded)="imageLoaded($event)" (cropperReady)="cropperReady()"
+                    (loadImageFailed)="loadImageFailed()"
+                    [roundCropper]="true"
+                        >
+                    </image-cropper>
+                    
+                </div>
+                <img class="imgBeforUpload" *ngIf="imageChangedEvent==''" [src]="croppedImage" />
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="row">
+                            <div class="col-md-6 col-12 col-lg-6">
+                                <input type="file" #takeInput (change)="fileChangeEvent($event)" id="BtnBrowseHidden"
+                                    name="files" style="display: none;" />
+                                <label for="BtnBrowseHidden" class="LblBrowse">
+                                    <img class="uploadDelete" src="../../assets/profileImageAndIcon/upload.svg" alt="">
+                                    Upload Photo
+                                </label>
+                                <label for="" class="LblBrowse marginLeft" (click)="deletPhoto()">
+                                    <img class="uploadDelete" src="../../assets/profileImageAndIcon/x-circle.svg"
+                                        alt="">
+                                    Delete Photo
+                                </label>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" 
+                (click)="uploadCoverOrProfile('profile')">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- editBanner -->
+
+<div class="modal fade" id="editBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Profile banner</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12"  *ngIf="fileToUpload!=null">
+                        <img *ngIf="imageChangedEventbanner==''" style="height: 427px;" class="w-100" [src]="croppedImageBanner" alt="">
+
+                        <image-cropper [imageChangedEvent]="imageChangedEventbanner" [maintainAspectRatio]="true"
+                        [aspectRatio]="16 / 6" format="png" (imageCropped)="imageCroppedBanner($event)"
+                        (imageLoaded)="imageLoaded($event)" (cropperReady)="cropperReady()"
+                        (loadImageFailed)="loadImageFailed()"
+                        [roundCropper]="false"
+                        >
+                    </image-cropper>
+                    </div>
+                </div>
+                <div class="row mt-2 mb-3">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="action" >
+                                <input #takeInputForCoverPic
+                                 (change)="chooseFileForCover($event)" type="file" id="cover" style="display: none;">
+                                <span class="me-2">
+                                    <img class="img-fluid" src="../../../../assets/profileImageAndIcon/upload.svg" alt="">
+                                </span>
+                                <span>
+                                    <label *ngIf="fileToUpload==null" for="cover">Upload Photo</label>
+                                    <label *ngIf="fileToUpload!=null" for="cover"> {{fileToUpload}} </label>
+                                </span>
+                            </div>
+                            <div class="action">
+                                <span class="me-2">
+                                    <img class="img-fluid" src="../../../../assets/profileImageAndIcon/x-circle.svg" alt="">
+                                </span>
+                                <span>
+                                    <label (click)="deleteUoloadedBanner(); overLay=!overLay" for="">Delete Photo</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-4">
+                        
+                    </div> -->
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton" data-bs-dismiss="modal" (click)="uploadCoverOrProfile('cover')">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div><div class="spinner-border text-primary spinner" role="status" *ngIf="isSpinner">
+    <span class="sr-only">Loading...</span>
+  </div>

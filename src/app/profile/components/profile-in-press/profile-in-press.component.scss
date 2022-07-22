@@ -1,0 +1,201 @@
+.inPress {
+    .sectionHeading {
+        display: flex;
+        margin-top: 90px;
+        margin-bottom: 30px;
+
+        .head {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #222222;
+        }
+
+        .action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+
+            .circle {
+                border: 1px solid #E0E3EB;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+            .Activecircle {
+                border: 1px solid #9CB0F7;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .detailsCard {
+        border: 1px solid #b2b3b5;
+        box-sizing: border-box;
+        filter: drop-shadow(20px 20px 40px rgba(61, 103, 255, 0.05));
+        padding: 35px;
+        border-radius: 30px;
+        position: relative;
+        line-height: 200%;
+        cursor: pointer;
+        height: 240px;
+        .dHeading {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 13px;
+            line-height: 171%;
+            color: #505050;
+
+            img {
+                // width: 24px;
+            }
+
+            .detailsHeadin {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 140%;
+                color: #222222;
+                margin-left: 14px;
+            }
+            .editYes{
+                display: inline-block;
+            }
+            .editNO{
+                display: none;
+            }
+            .float-me{
+                float: right;
+            }
+        }
+
+        .details {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            color: #505050;
+            margin-top: 17px;
+            height: 95px;
+            overflow: auto;
+        }
+
+        .bythe {
+            position: absolute;
+            bottom: 19px;
+            left: 0;
+
+            .mainSpan {
+                margin-left: 6%;
+            }
+
+            .byG {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 140%;
+                color: #222222;
+            }
+
+            .date {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 140%;
+                color: #989AA3;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .link {}
+        }
+    }
+
+    .detailsCard:hover {
+        background: #F9F9F9;
+        box-shadow: 20px 20px 40px rgba(216, 218, 225, 0.4);
+        border-radius: 30px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .inPress {
+        .detailsCard {
+            height: 270px;
+            .details{
+                height: 125px;
+            }
+            .bythe {
+                position: absolute;
+                bottom: 19px;
+                left: 0;
+
+                .mainSpan {
+                    margin-left: 11%;
+                }
+            }
+        }
+    }
+   
+}
+
+@media (max-width: 576px) {
+    .inPress {
+        .sectionHeading {
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 22px;
+        }
+
+        .detailsCard {
+            margin-bottom: 45px;
+            .bythe {
+                position: absolute;
+                bottom: 19px;
+                left: 0;
+
+                .mainSpan {
+                    margin-left: 11%;
+
+                    .date {
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.details::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.details::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+.details::-webkit-scrollbar-thumb {
+    background: #E0E3EB;
+    // background-color: #000000;
+    border: 2px solid #E0E3EB;
+}

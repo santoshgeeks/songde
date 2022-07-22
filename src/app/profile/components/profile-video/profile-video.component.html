@@ -1,0 +1,146 @@
+<section class="videoSection">
+    <div class="row">
+        <div class="sectionHeading">
+            <span class="head">Video</span>
+            <div class="action">
+                <div class="circle" 
+                [ngClass]="!videoSection ? 'Activecircle' : 'circle' "
+                (click)="hideUnHide()">
+                    <img *ngIf="videoSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="" >
+                    <img *ngIf="!videoSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="" >
+                </div>
+                <!-- <div class="circle">
+                    <img src="../../assets/profileImageAndIcon/activView.svg" alt="">
+                </div> -->
+                <div class="circle" data-bs-toggle="modal" data-bs-target="#video">
+                    <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="videosList.length>0 && !videoSection">
+        <div class="videoLists w-100 px-0">
+            <div class="row">
+                <ng-container *ngFor="let item of displayeHilight; let i=index; let last=last">
+                    <div class="col-12 text-center" 
+                    [ngClass]="{'center1': i==0 || i==2,'col-lg-3':i==0 || i==2,'col-lg-6':i==1,
+                    'col-md-2':i==0 || i==2, 
+                    'direction':i==2,
+                    'col-md-8':i==1,'three':i==1, 'one':i==0 || i==2, 'two':i==1}">
+                        <youtube-player
+                        class="w-100" [videoId]="item.youtube_video_id" (ready)="savePlayer($event)"
+                            (change)="onStateChange($event)" [playerVars]="item.youtube_url">
+                        </youtube-player>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- video popup -->
+<div class="modal fade" id="video" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content p-0">
+            <div class="modal-header paddinglr paddingt">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row paddinglr">
+                <div class="col-lg-12 col-md-12 col-12 mb-3">
+                    <h5 class="modal-title mb-0" id="exampleModalLabel">Video</h5>
+                    <span class="secondTitle">
+                        Select a video to highlight on your profile
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body" id="style-5" style="height: 330px;overflow-y: auto;">
+
+                <div class="row">
+                    <div #activeList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                        [cdkDropListData]="videosList" [cdkDropListConnectedTo]="[inactiveList]"
+                        (cdkDropListDropped)="drop($event)">
+                        <div style="cursor: pointer;" (click)="setHilightedSong(item,i)"
+                            class="row drag-box tracklist paddinglr highlightedBg mb-2"
+                            [ngClass]="{'highlightedBg': item.is_highlighted,'unhilightedBg': !item.is_highlighted}"
+                            *ngFor="let item of videosList; let i=index" cdkDrag>
+                            <div class="col-lg-1 col-md-1 col-1 shuffle">
+                                <div class="px-0 text-end">
+                                    <img class="ms-auto" src="../../assets/profileImageAndIcon/shuffle.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-4 fram">
+                                <youtube-player class="w-100 trackBanner" [videoId]="item.youtube_video_id"
+                                    (ready)="savePlayer($event)" (change)="onStateChange($event)"
+                                    [playerVars]="item.youtube_url">
+                                </youtube-player>
+                            </div>
+                            <div class="col-lg-6 col-md-6 px-0 col-6 trackAndTitle">
+                                <div class="row">
+                                    <p class="trackTitle"> {{item.title}} </p>
+                                    <p class="albumtype">
+                                        <ng-container *ngFor="let item1 of item.artists; let last=last">
+                                            <span> {{item1.username}}</span>
+                                            <span *ngIf="!last">,</span>
+                                        </ng-container>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-1 shuffle" *ngIf="item.is_highlighted">
+                                <div class="px-0 text-end">
+                                    <img class="ms-auto" src="../../../../assets/icons/activeStar.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-1 shuffle" *ngIf="!item.is_highlighted">
+                                <div class="px-0 text-end">
+                                    <img class="ms-auto" src="../../../../assets/icons/deactiveStar.svg" alt="">
+                                </div>
+                            </div>
+                            <!-- {{head.title}} -->
+                        </div>
+                    </div>
+                    <div #inactiveList="cdkDropList" class="box-list" cdkDropList cdkDropListOrientation="vertical"
+                        [cdkDropListData]="videosList" [cdkDropListConnectedTo]="[activeList]"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="drag-box" cdkDrag>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row tracklist paddinglr" [ngClass]="{'highlightedBg':item.highlighted}"
+                    *ngFor="let item of videosList">
+                    <div class="col-lg-1 col-md-1 col-1 shuffle">
+                        <div class="px-0 text-end">
+                            <img class="ms-auto" src="../../assets/profileImageAndIcon/shuffle.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-4 fram">
+                        <youtube-player class="w-100 trackBanner"
+                             [videoId]="item.youtube_video_id" (ready)="savePlayer($event)"
+                            (change)="onStateChange($event)" [playerVars]="item.youtube_url">
+                        </youtube-player>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-6 trackAndTitle">
+                        <div class="row">
+                            <p class="trackTitle"> {{item.title}} </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-12 highAndView ">
+                        <div class="action" *ngIf="!item.status">
+                            <div class="circle" *ngIf="item.status">
+                                <img src="../../assets/profileImageAndIcon/activView.svg" alt="">
+                            </div>
+                            <div class="deActiveCricle" *ngIf="item.view">
+                                <img src="../../assets/profileImageAndIcon/view.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="highlighted" *ngIf="item.status">Highlighted</div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="row paddingb paddinglr">
+                <button type="button" class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

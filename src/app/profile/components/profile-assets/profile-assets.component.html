@@ -1,0 +1,154 @@
+<section class="AssetsForDownload">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-9 col-md-12 col-12 order-lg-1 order-md-2 order-2" *ngIf="!AssetsSection">
+            <div class="assetsBox">
+                <div class="row">
+                    <div class="aHeading">
+                        Assets for download
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="allChips">
+                        <div class="row">
+                            <div class="chips me-lg-3 mt-md-2 mx-md-1 col-lg col-md col-12 marginSm"
+                                *ngFor="let item of assetsForDownload"
+                                (click)="downloadAssets(item)"
+                                >
+                                <span >
+                                    <img [src]="item.icon" alt="">
+                                    <span class="text"> {{item.assetName}} </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-9 col-md-12 col-12 order-lg-1 order-md-2 order-2" *ngIf="AssetsSection"></div>
+        <div class="col-lg-2 col-md-12 col-12 order-lg-2 order-md-1 order-1">
+            <div class="sectionHeading" style="margin-top:0px">
+                <div class="action">
+                    <div class="circle" 
+                            [ngClass]="!AssetsSection ? 'Activecircle' : 'circle' "
+                            (click)="hideUnHide()">
+                                <img *ngIf="AssetsSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="" >
+                                <img *ngIf="!AssetsSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="" >
+                            </div>
+                    <!-- <div class="circle">
+                        <img src="../../assets/profileImageAndIcon/activView.svg" alt="">
+                    </div> -->
+                    <div class="circle" data-bs-toggle="modal" data-bs-target="#assets" (click)="edit()">
+                        <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="assets" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Assets for download</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <input accept=".png, .svg, .jpeg" type="file" #takeInputLogo
+                            (change)="fileChangeEventjpeg($event)" id="logjpeg" name="files" style="display: none;" />
+                        <label for="" class="assetsLabel">Logotipe</label>
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="uploadBtn" [ngClass]="jpegFile==''? 'uploadBtn' : 'pt-0 ps-0 pe-0'">
+                                <div class="row" *ngIf="jpegFile!=''">
+                                    <div class="col-12 text-end" (click)="resetGpeg()">
+                                        <img src="../../assets/profileImageAndIcon/x.svg" alt="">
+                                    </div>
+                                </div>
+                                <label *ngIf="jpegFile==''" for="logjpeg" style="cursor:pointer">Upload logo</label>
+                                <div class="row pb-2" *ngIf="jpegFile!=''">
+                                    <div class="col-4">
+                                        <img *ngIf="jpegFile!=''" src="../../../../assets/profileImageAndIcon/jpeg.png"
+                                            alt="">
+                                    </div>
+                                    <div class="col-8 ps-0">
+                                        <div class="row">
+                                            <span *ngIf="jpegFile!=''" class="logo">Logo.jpeg</span>
+                                        </div>
+                                        <div class="row">
+                                            <div *ngIf="jpegFile!=''" class="size">244 KB</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>
+                                <img (click)="resetGpeg()" *ngIf="jpegFile!=''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/rotate-cw.svg" alt="">
+                                <img *ngIf="jpegFile==''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/upload.svg" alt="">
+                            </span>
+                        </div>
+
+                        <div class="note">Files in jpeg, svg, PDF format upto to 1 MB can be uploaded </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <input type="file" accept=".pdf" #takeInputpdf (change)="fileChangeEventpdf($event)" id="pdf"
+                            name="files" style="display: none;" />
+                        <label for="pdf" class="assetsLabel">Tech rider</label>
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="uploadBtn" [ngClass]="pdfFile==''? 'uploadBtn' : 'pt-0 ps-0 pe-0'">
+                                <div class="row" *ngIf="pdfFile!=''">
+                                    <div class="col-12 text-end" (click)="resetPdf()">
+                                        <img src="../../assets/profileImageAndIcon/x.svg" alt="">
+                                    </div>
+                                </div>
+                                <label *ngIf="pdfFile==''" for="pdf">Upload tech rider</label>
+                                <div class="row pb-2" *ngIf="pdfFile!=''">
+                                    <div class="col-4">
+                                        <img *ngIf="pdfFile!=''" src="../../../../assets/profileImageAndIcon/pdf.png"
+                                            alt="">
+                                    </div>
+                                    <div class="col-8  ps-0">
+                                        <div class="row">
+                                            <span *ngIf="pdfFile!=''" class="logo">Techrider.pdf </span>
+                                        </div>
+                                        <div class="row">
+                                            <div *ngIf="pdfFile!=''" class="size">1.1 MB</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>
+                                <img (click)="resetPdf()" *ngIf="pdfFile!==''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/rotate-cw.svg" alt="">
+                                <img *ngIf="pdfFile==''" class="ms-2 pt-2"
+                                    src="../../assets/profileImageAndIcon/upload.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="note">
+                            Files in PDF format upto to 5 MB can be uploaded
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spinner-border text-primary spinner" role="status" *ngIf="isSpinner">
+    <span class="sr-only">Loading...</span>
+</div>

@@ -1,0 +1,227 @@
+.userNote {
+    background: #EFF1F6;
+    border-radius: 20px;
+    margin-top: 5px;
+    padding: 40px;
+    position: relative;
+    width: 660px;
+    height: 197px;
+
+    .note {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        height: 95px;
+        color: #222222;
+        overflow: auto;
+    }
+
+    .name {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #3D67FF;
+        margin-top: 12px;
+    }
+
+    .invertedComa {
+        top: -9%;
+        width: 55px;
+        position: absolute;
+
+    }
+
+
+}
+
+.marginTop {
+    margin-top: 127px;
+
+}
+
+;
+
+.inlargeButtonWidth {
+    width: 125px;
+}
+
+.sectionHeading {
+    display: flex;
+    margin-top: 110px;
+    margin-bottom: 50px;
+
+    .head {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: #222222;
+    }
+
+    .action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+
+        .circle {
+            border: 1px solid #E0E3EB;
+            box-sizing: border-box;
+            border-radius: 42px;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .Activecircle {
+            border: 1px solid #9CB0F7;
+            box-sizing: border-box;
+            border-radius: 42px;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    }
+
+}
+@media (max-width: 1024px) {
+    .inlargeButtonWidth {
+        width: 95px;
+        padding: 0;
+    }
+    .userNote {
+        background: #EFF1F6;
+        border-radius: 5px;
+        margin-top: 5px;
+        padding: 25px;
+        position: relative;
+        width: 580px;
+        height: 197px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sectionHeading {
+        margin-bottom: 10px;
+        margin-top: 94px;
+    }
+
+    .marginTop {
+        margin-top: 0px;
+
+    }
+
+    ;
+
+    .userNote {
+        background: #EFF1F6;
+        border-radius: 5px;
+        margin-top: 5px;
+        padding: 25px;
+        position: relative;
+        width: 552px;
+        height: 188px;
+
+        .note {
+            // border-radius: 20px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 27px;
+            color: #222222;
+            margin-top: 12px;
+            height: 81px;
+            overflow-y: auto;
+        }
+
+        .name {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            color: #3D67FF;
+            margin-top: 12px;
+        }
+
+        .invertedComa {
+            top: -9%;
+            width: 55px;
+            position: absolute;
+
+        }
+
+    }
+}
+
+@media (max-width: 576px) {
+    .sectionHeading {
+        margin-bottom: 10px;
+        margin-top: 19px;
+    }
+
+    .marginTop {
+        margin-top: 0px;
+
+    }
+
+    ;
+
+    .userNote {
+
+        width: 343px;
+        height: 227px;
+
+        .note {
+            width: 259px;
+            height: 120px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .name {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            color: #3D67FF;
+            margin-top: 12px;
+        }
+
+        .invertedComa {
+            top: -9%;
+            width: 55px;
+            position: absolute;
+
+        }
+
+    }
+}
+
+.submitButton {
+    margin-top: 45px;
+}
+
+.note::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.note::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+.note::-webkit-scrollbar-thumb {
+    background: #E0E3EB;
+    // background-color: #000000;
+    border: 2px solid #E0E3EB;
+}

@@ -1,9 +1,16 @@
 <div class="row">
+    <div class="row">
+       <div class="col-lg d-flex">
+        <a routerLink="/promotion/promotion-home" >promotion</a><br>
+        <a class="ms-4" routerLink="/profile" >profile</a>
+        <span class="ms-3">(note:- These are the temperory buttons to navigate once review done i ll remove it.)</span>
+       </div>
+    </div>
     <div class="nabar p-0" >
        <div class="row navBarRow">
         <div class="side bg-light d-inline-block" *ngIf="openProfile">
-            <a routerLink="/promotion-home" >promotion</a><br>
-            <!-- <a routerLink="/profile" (click)="openProfile=!openProfile">profile</a> -->
+            <!-- <a routerLink="/promotion/promotion-home" >promotion</a><br>
+            <a routerLink="/profile" (click)="openProfile=!openProfile">profile</a> -->
             </div>
         <!-- <div class="side bg-light d-inline-block" routerLink="/profile" >  promotion</div> -->
         <div class="main p-0 d-inline-block right"  [ngClass]="{'right1':!openProfile}">

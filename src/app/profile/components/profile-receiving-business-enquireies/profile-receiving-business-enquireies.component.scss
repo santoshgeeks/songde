@@ -1,0 +1,360 @@
+
+.recievingBusiness {
+    .bg {
+        position: relative;
+
+        .reBuEn {
+            background: #F9F9F9;
+            border-radius: 20px;
+            margin-top: 110px;
+            position: relative;
+
+            .img {
+                width: 40px;
+                height: 40px;
+                border-radius: 12.5px;
+                background: #3d67ff12;
+                border-radius: 12.5px;
+                text-align: center;
+
+                img {
+                    margin-top: 10px;
+                }
+            }
+
+            .rcbItem {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 140%;
+                color: #222222;
+            }
+
+            .rightBg {
+                img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    border-radius: 6%;
+                }
+            }
+
+            .rightLg {
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    border-radius: 6%;
+                }
+            }
+
+            .details {
+                margin-top: 30px;
+                font-size: 12px;
+            }
+
+            .heading {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 36px;
+                color: #222222;
+                margin-top: 40px;
+                display: inline-block;
+            }
+
+            .icons {
+                display: flex;
+
+                .items {
+                    .image {
+                        margin-right: 10px;
+                    }
+                }
+
+                .middle {
+                    margin-left: 75px;
+                    margin-right: 75px;
+                }
+            }
+
+            .button {
+                padding-bottom: 40px;
+                margin-top: 40px;
+
+                .contactButton {
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    text-transform: capitalize;
+                    border: none;
+                    outline: none;
+                    background: #F9F9F9;
+                    box-shadow: -5px -5px 10px #FFFFFF, 4px 5px 10px rgba(216, 218, 225, 0.7);
+                    border-radius: 8px;
+                    width: 140px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #3D67FF;
+                    margin: auto;
+                }
+            }
+        }
+
+    }
+
+    .sectionHeading {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: #222222;
+
+        .action {
+            display: flex;
+            align-items: center;
+            margin-top: 105px;
+
+            .circle {
+                border: 1px solid #E0E3EB;
+                box-sizing: border-box;
+                border-radius: 42px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 38px;
+                height: 38px;
+                cursor: pointer;
+                margin-right: 10px;
+
+            }
+            .Activecircle{
+                border: 1px solid #9CB0F6;
+                box-sizing: border-box;
+                border-radius: 42px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 38px;
+                height: 38px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+   
+    .recievingBusiness {
+        .bg {
+            position: relative;
+
+            .reBuEn {
+                background: #F9F9F9;
+                border-radius: 20px;
+                margin-top: 110px;
+                position: relative;
+
+                .img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 12.5px;
+                    background: #3d67ff12;
+                    border-radius: 12.5px;
+                    text-align: center;
+
+                    img {
+                        margin-top: 10px;
+                    }
+                }
+
+                .rcbItem {
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: #222222;
+                }
+
+                .rightBg {
+                    img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 100%;
+                        border-radius: 6%;
+                    }
+                }
+
+                .rightLg {
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        border-radius: 6%;
+                    }
+                }
+
+                .details {
+                    margin-top: 30px;
+                }
+
+                .heading {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 36px;
+                    color: #222222;
+                    margin-top: 40px;
+                    display: inline-block;
+                }
+
+                .icons {
+                    display: flex;
+
+                    .items {
+                        .image {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .middle {
+                        margin-left: 75px;
+                        margin-right: 75px;
+                    }
+                }
+
+                .button {
+                    padding-bottom: 40px;
+                    margin-top: 40px;
+
+                    .contactButton {
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 21px;
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        text-transform: capitalize;
+                        border: none;
+                        outline: none;
+                        background: #F9F9F9;
+                        box-shadow: -5px -5px 10px #FFFFFF, 4px 5px 10px rgba(216, 218, 225, 0.7);
+                        border-radius: 8px;
+                        width: 140px;
+                        height: 50px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #3D67FF;
+                        margin: auto;
+                    }
+                }
+            }
+
+        }
+
+        .sectionHeading {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #222222;
+
+            .action {
+                display: flex;
+                align-items: center;
+                margin-top: 105px;
+
+                .circle {
+                    border: 1px solid #E0E3EB;
+                    box-sizing: border-box;
+                    border-radius: 42px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 38px;
+                    height: 38px;
+                    cursor: pointer;
+                    margin-right: 10px;
+
+                }
+            }
+        }
+    }
+
+    
+
+}
+
+@media (max-width: 576px) {
+    
+    .recievingBusiness {
+
+        .bg {
+            position: relative;
+
+            .reBuEn {
+                margin-top: 22px;
+            }
+
+        }
+
+        .sectionHeading {
+            .action {
+                display: flex;
+                align-items: center;
+                margin-top: 22px;
+            }
+        }
+    }
+
+
+ 
+}
+@media (max-width: 375px) {
+   .padding-0{
+    padding-left: 0px;
+    padding-right: 0px;
+   }
+   .font-size-adj{
+    font-size: 12px;
+   }
+   .widthInSmall{
+    width: 170px;
+   }
+   .recievingBusiness {
+
+    .bg {
+        position: relative;
+
+        .reBuEn {
+            margin-top: 22px;
+            .rcbItem{
+                font-size: 12px;
+            }
+        }
+
+    }
+}
+}
+@media (min-width: 320px) {
+    .padding-0{
+     padding-left: 0px;
+     padding-right: 0px;
+    }
+    .font-size-adj{
+     font-size: 12px;
+    }
+    .widthInSmall{
+     width: 170px;
+    }
+ }
+

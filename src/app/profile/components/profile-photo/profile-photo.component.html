@@ -1,0 +1,114 @@
+<section class="photosection">
+    <div class="row">
+        <div class="sectionHeading">
+            <span class="head">Photo</span>
+            <div class="action">
+                <div class="circle" 
+                [ngClass]="!photosSection ? 'Activecircle' : 'circle' "
+                (click)="hideUnHide()">
+                    <img *ngIf="photosSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="" >
+                    <img *ngIf="!photosSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="" >
+                </div>
+                <!-- <div class="circle">
+                    <img src="../../assets/profileImageAndIcon/activView.svg" alt="">
+                </div> -->
+                <div class="circle" data-bs-toggle="modal" data-bs-target="#photo" (click)="deletePhotoWhileUploadin()">
+                    <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row position-relative" *ngIf="!photosSection">
+        <div class="col-lg-3 col-md-4 col-12 mt-md-2 d-lg-flex d-md-none d-none"  *ngFor="let item of photo">
+            <div class="photo w-100 ">
+                <img class="w-100" [src]="item.image" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 mt-md-2 d-lg-none d-md-flex d-none pe-0" 
+        *ngFor="let item of photoMd">
+        <div class="photo w-100">
+            <img class="w-100" [src]="item.image" alt="">
+        </div>
+        </div>
+        <div *ngIf="photoMd.length==3 && allPhotos.length-photoMd.length!=0"
+            class="col-3 d-lg-none d-md-flex 
+            d-none position-absolute numberContainer
+             numberContainerBG">
+            <div class="upperContaints"> +{{allPhotos.length-photoMd.length}} </div>
+        </div>
+        <div *ngIf="photo.length>4"
+            class="col-3 d-lg-flex d-md-flex d-none position-absolute numberContainer
+             numberContainerBG">
+            <div class="upperContaints"> +{{allPhotos.length-photo.length}} </div>
+        </div>
+        <div class="scrollInsmall d-lg-none d-md-none d-flex" >
+            <div class="photo   w-100" *ngFor="let item of photo">
+                <img class="" [src]="item.image" alt="">
+            </div>
+            <div class="righclick msgCardScrollWrapper" id="content" #widgetsContent>
+                <div class="arrow msgCardDeck" (click)="toTop($event)">
+                    <img src="../../assets/profileImageAndIcon/rightArrow.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="photo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12 px-0">
+                    <div class="row">
+                        <div class="px-3 mx-1">
+                            <h5 class="modal-title" id="exampleModalLabel">Photos</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="flexPhotoContainer">
+                        <div class="photoItems position-relative" *ngFor="let item of allPhotos">
+                            <img class="image" [src]="item.image" alt="">
+                            <div class="actionHover">
+                                <span (click)="deletePhoto(item)" data-bs-dismiss="modal">
+                                    <p class="mb-0 text-center">
+                                        <img class="delete"
+                                            src="../../../../assets/profileImageAndIcon/x-circle-white.svg" alt="">
+                                    </p>
+                                    <span>Delete Photo</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="uploadImage">
+                            <input type="file" accept="image/*" style="display: none;" id="file"
+                                (change)="fileChangeEvent($event)" #takeInput>
+                            <label class="text-center w-100" style="margin-top: 20px;" for="file">
+                                <img src="../../assets/profileImageAndIcon/uploadImage.svg" alt="">
+                                <div>Upload photo</div>
+                            </label>
+                            <div class="row">
+                                <p class="photNameUploaded">{{fileToUpload}} 
+                                    <span
+                                    *ngIf="fileToUpload" class="crossPhoto"
+                                     (click)="deletePhotoWhileUploadin()">X</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spinner-border text-primary spinner" role="status" *ngIf="isSpinner">
+    <span class="sr-only">Loading...</span>
+</div>

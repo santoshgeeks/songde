@@ -1,0 +1,502 @@
+.music-section {
+    // background: #3d67ff0a;
+    padding-bottom: 74px;
+
+    .heading {
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+        padding-bottom: 27px;
+
+        .head {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #222222;
+        }
+
+
+
+        .maction {
+            margin-left: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .circle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #E0E3EB;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            .Activecircle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #9CB0F7;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .ptrackhead {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.3px;
+        text-transform: capitalize;
+        margin-left: 17px;
+        color: #222222;
+
+
+    }
+
+    .largBanner {
+        border-radius: 10px;
+    }
+
+    .album {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        color: #989AA3;
+    }
+
+    .playingAdioImage {
+        height: 294px;
+    }
+
+    .titel {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        color: #222222;
+        margin-top: 14px;
+        margin-bottom: 21px;
+    }
+
+    .length {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 170%;
+        color: rgba(34, 34, 34, 0.8);
+        margin-bottom: 40px;
+    }
+
+    .playButton {
+        background: #F5F6F9;
+        box-shadow: -5px -5px 10px #FFFFFF, 4px 5px 10px rgba(216, 218, 225, 0.7);
+        border-radius: 8px;
+        color: #3D67FF;
+        outline: none;
+        border: none;
+        height: 50px;
+        width: 135px;
+
+        .img1 {
+            // width: 11px;
+            height: 14px;
+        }
+
+        .img2 {
+            width: 5px;
+            height: 13px;
+        }
+    }
+
+    .height {}
+
+    .listedTrack {
+        margin-top: 48PX;
+        // padding-top: 10px;
+        background: #F5F6F9;
+        border: 1px solid #E0E3EB;
+        box-sizing: border-box;
+        border-radius: 20px;
+        height: 164px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        overflow-y: hidden;
+
+        .trackRows {
+            // height: 164px;
+            overflow-y: auto;
+        }
+
+        .trackName {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        .track {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .popularTack {
+        .pheading {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 0.3px;
+            text-transform: capitalize;
+            color: #222222;
+        }
+
+        .bannerImag {
+            width: 68.47px;
+            height: 68.47px;
+            position: relative;
+
+            img {
+                border-radius: 8px;
+            }
+
+            .playAndPuase {
+                width: 68.47px;
+                height: 68.47px;
+                position: absolute;
+                top: 0;
+                background: linear-gradient(0deg, rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3));
+                border-radius: 9px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                img {
+                    border-radius: 0px;
+                }
+            }
+        }
+
+
+
+        .trackHeader {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+            color: #222222;
+
+        }
+
+        .discription {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 18px;
+            color: rgba(34, 34, 34, 0.8);
+
+        }
+
+        .marginInTrack {
+            margin-top: 22px;
+        }
+    }
+
+    .track {
+        margin-top: 15px;
+        margin-bottom: 15PX;
+    }
+
+}
+@media (max-width:1024px){
+    .music-section{
+        .ptrackhead {
+            margin-left: 0px;
+        }
+    }
+    
+}
+@media (max-width: 768px) {
+
+    .music-section {
+        .popularTack {
+            margin-top: 20px;
+
+            .paddingINSmall {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        .album {
+            // margin-top: 10px;
+        }
+
+        .playingAdioImage {
+            height: 200px;
+        }
+
+        .trackScroller {
+            height: 175px;
+        }
+
+        .listedTrack {
+            margin-top: 10PX;
+            height: 190px;
+        }
+
+        .track {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .heading {
+            padding-bottom: 20px;
+        }
+    }
+
+    .modal .modal-content .paddinglr {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .modal .modal-content .modal-header {
+        padding: 27px;
+        border-bottom: 0px;
+    }
+
+   
+
+}
+.tabrow{
+    border-bottom: 1px solid #E0E3EB;
+    height: 45px;
+    margin-bottom: 27px;
+}
+@media (max-width: 576px) {
+    .music-section {
+        .popularTack {
+            margin-top: 22px;
+        }
+
+        .album {
+            margin-top: 10px;
+        }
+
+        .titel {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .length {
+            margin-bottom: 0px;
+        }
+
+        .playButton {
+            margin-top: 26px;
+        }
+
+        .listedTrack {
+            margin-top: 36PX;
+        }
+
+        .playingAdioImage {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+        }
+
+        .heading {
+            padding-bottom: 20px;
+        }
+    }
+
+    .modal .modal-content .paddinglr {
+        padding-left: 0px;
+        padding-right: 0px;
+
+        .shuffle {
+            img {
+                width: 25px;
+            }
+
+        }
+    }
+
+    .modal .modal-content .modal-header {
+        padding: 27px;
+        border-bottom: 0px;
+
+    }
+    .tabrow{
+       
+        padding-left: 31px;
+    }
+
+    .paddinginsm{
+        padding-left: 31px !important;
+    }
+
+}
+
+.tabActive {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #222222;
+    border-bottom: 2px solid #3D67FF;
+    width: auto;
+    padding: 0;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+
+.tabDactive {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #989AA3;
+    border-bottom: 1px solid;
+    width: auto;
+    padding: 0;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.banner {
+    margin-top: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    img {
+        border-radius: 5px;
+    }
+}
+
+.itemFlex {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .play {
+        cursor: pointer;
+        width: 13px;
+        height: 16px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .pause {
+        cursor: pointer;
+        display: flex;
+        width: 13px;
+
+        img {
+            width: 4px;
+            height: 16px;
+        }
+    }
+}
+
+// .box-list:active {
+//     box-shadow: 0px 0px 19px -10px grey;
+//     border-radius: 5px;
+// }
+
+.example-container {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.example-list {
+    border: solid 1px #ccc;
+    min-height: 60px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+}
+
+.example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+}
+
+.cdk-drag-preview {
+    // box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+.trackScroller::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.trackScroller::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+.trackScroller::-webkit-scrollbar-thumb {
+    background: #E0E3EB;
+    // background-color: #000000;
+    border: 2px solid #E0E3EB;
+}

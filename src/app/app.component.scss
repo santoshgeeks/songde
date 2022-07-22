@@ -1,7 +1,7 @@
 
 .navBarRow{
     .side{
-        width: 18%;
+        width: 16%;
     }
     .right{
         width: 82%;
@@ -10,7 +10,9 @@
         width: 100%;
     }
 }
-
+.main{
+    background: #F9F9F9;
+}
 @media (max-width: 768px) {
    
     

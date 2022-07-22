@@ -1,0 +1,75 @@
+<section class="section-1">
+        <div class="row">
+            <div class="heading">
+                Promote your music
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="box-with-border w-100">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-4 pr-0">
+                            <img class="musicImage" [src]="playingData.songImage" alt="">
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-8">
+                            <div class="row">
+                                <div class="songName">
+                                    {{playingData.songName}}
+                                </div>
+                                <div class="publishedOn">
+                                    Published On: {{playingData.publishedOn}}
+                                </div>
+                                <div class="clapAndPlay">
+                                    <img class="me-2" src="../../assets/icons/Playingicon.svg" alt="">
+                                    <span class="me-2">{{playingData.noOfPlays}} plays</span>
+                                    <img class="me-2" src="../../../assets/icons/ClapIcon.svg" alt="">
+                                    <span class="me-2">{{playingData.noOfClaps}} claps</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 changeButton d-block">
+                            <div class="dropdown">
+                                <button class="customeButton ms-lg-auto dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Change the track
+                                </button>
+                                <div id="style-4" class="dropdown-menu selectTrack"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <div class="row mt-1" *ngFor="let item of allTracks">
+                                        <div class="col-4">
+                                            <img class="img-fluid" [src]="item.songImage" alt="">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="songName">
+                                                    {{item.songName}}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="disc">
+                                                    {{item.disc}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="chipsTab">
+                <div class="chipTab" (click)="chips.selected =!chips.selected"
+                    [ngClass]="{'chipTabActive': chips.selected}" *ngFor="let chips of chipsTab"> {{chips.chipName}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <app-promotion-tool></app-promotion-tool>
+        </div>
+</section>
+<!-- <app-footer></app-footer> -->

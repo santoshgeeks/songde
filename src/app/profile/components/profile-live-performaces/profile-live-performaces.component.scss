@@ -1,0 +1,235 @@
+
+.livePr {
+    .psectionHeading {
+        display: flex;
+        margin-top: 70px;
+        margin-bottom: 30px;
+
+        .head {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #222222;
+        }
+
+        .action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+
+            .circle {
+                border: 1px solid #E0E3EB;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+            .Activecircle {
+                border: 1px solid #9CB0F7;
+                box-sizing: border-box;
+                border-radius: 42px;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .performence {
+        .hrLine {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .padArea {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .flexDesplay {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .flexDesplayRight {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dateMonth {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            .day {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 30px;
+                align-items: center;
+                text-align: center;
+                color: #3D67FF;
+            }
+
+            .month {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 12px;
+                text-align: center;
+                color: #3D67FF;
+                margin-top: -14px;
+            }
+        }
+        .year {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 140%;
+            text-align: right;
+            color: #3D67FF;
+        }
+        .eventName {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 140%;
+            color: #222222;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            word-break: break-all;
+        }
+
+        .location {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 140%;
+            color: #222222;
+            margin-top: 5px;
+        }
+    }
+
+    .performence:hover {
+        background: #F9F9F9;
+        box-shadow: 20px 20px 60px rgba(216, 218, 225, 0.4);
+        border-radius: 16px;
+        .hrLine {
+            border-bottom: 0px solid #e6e6e6;
+        }
+        .dateMonth {
+            background: #F9F9F9;
+            box-shadow: 10px 10px 40px rgba(216, 218, 225, 0.5);
+            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            .day {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 30px;
+                align-items: center;
+                text-align: center;
+                color: #3D67FF;
+            }
+
+            .month {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 12px;
+                text-align: center;
+                color: #3D67FF;
+                margin-top: -14px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .livePr {
+        .psectionHeading {
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 22px;
+        }
+
+    }
+
+    .inPress {
+        .detailsCard {
+            height: 395px;
+
+            .bythe {
+                position: absolute;
+                bottom: 19px;
+                left: 0;
+
+                .mainSpan {
+                    margin-left: 11%;
+                }
+            }
+        }
+    }
+
+    .AssetsForDownload {
+        margin-top: 30px;
+        padding-bottom: 117px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .livePr {
+        .psectionHeading {
+    .head {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 36px;
+        color: #222222;
+    }
+}
+    }
+}
+
+:host::ng-deep .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #3d67ff;
+    color: #fefefe;
+    cursor: default;
+}
+:host ::ng-deep .ngx-pagination {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+select{
+    -webkit-appearance: listbox !important
+    }
+
+.editIcon{
+    margin-left: -7px;
+    margin-right: 7px;
+    width: 13px;
+    text-align: center;
+}

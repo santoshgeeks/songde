@@ -1,0 +1,140 @@
+<section class="recievingBusiness">
+    <div class="row pb-5">
+        <div class="col-lg-1 col-md-12 d-lg-block d-md-block d-none "></div>
+        <div class="col-lg-11 col-md-12 col-12 px-0">
+            <div class="row mt-lg-5 mt-md-0">
+                <div class="col-lg-11 col-md-12 col-12 order-lg-1 order-md-2 order-2
+                px-lg-3 px-md-0  px-0
+                bg">
+                    <div class="reBuEn mt-lg-5 mt-md-3 me-lg-2 me-md-2 me-0">
+                        <div class="row">
+                            <div class="heading text-center">Receiving Business Enquireies For</div>
+                        </div>
+                        <div class="row details" *ngIf="!enquireiesSection">
+                            <div class="col-lg-2 col-md-3 col-6 ms-auto ">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-5 col-4">
+                                        <div class="img">
+                                            <img class="image" src="../../assets/profileImageAndIcon/musicListners.svg"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-8">
+                                        <div class="rcbItem font-size-adj">Music Licensing</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-6 ">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-5 col-4">
+                                        <div class="img">
+                                            <img class="image" src="../../assets/profileImageAndIcon/sliders.svg"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-8">
+                                        <div class="rcbItem font-size-adj" style="margin-top: 10px;">Production</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 widthInSmall col-md-4 col-6 mx-lg-0 mx-md-0 mx-auto me-lg-auto mt-lg-0 me-md-auto mt-md-0 mt-4">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-4">
+                                        <div class="img">
+                                            <img class="image" src="../../assets/profileImageAndIcon/musicBlack.svg"
+                                                alt="">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-8">
+                                        <div class="rcbItem font-size-adj" style="margin-top: 10px;">Live Gigs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button" *ngIf="!enquireiesSection">
+                            <button class="contactButton">Contact</button>
+                        </div>
+                        <div class="rightBg">
+                            <img class="d-lg-block d-md-block d-none"
+                                src="../../assets/profileImageAndIcon/Rectangle 2172.png" alt="">
+                            <img class="d-lg-none d-md-none d-block"
+                                src="../../assets/profileImageAndIcon/Rectanglesm.png" alt="">
+                        </div>
+                        <div class="rightLg" >
+                            <img class="d-lg-block d-md-block d-none"
+                                src="../../assets/profileImageAndIcon/Rectangle 2174.png" alt="">
+                            <img class="d-lg-none d-md-none d-block"
+                                src="../../assets/profileImageAndIcon/Rectanglesmleft.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-12 col-12 px-0 order-lg-2 order-md-1 order-1">
+                    <div class="sectionHeading">
+                        <div class="action mt-lg-5 mt-md-3 float-end">
+                            <div class="circle" 
+                            [ngClass]="!enquireiesSection ? 'Activecircle' : 'circle' "
+                            (click)="hideUnHide()">
+                                <img *ngIf="enquireiesSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="" >
+                                <img *ngIf="!enquireiesSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="" >
+                            </div>
+                            <!-- <div 
+                            [ngClass]="enquireiesSection ? 'Activecircle' : 'circle' "
+                            (click)="hideUnhideSection();enquireiesSection=!enquireiesSection">
+                                <img *ngIf="!enquireiesSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="" >
+                                <img *ngIf="enquireiesSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="" >
+                            </div> -->
+                            <!-- <div class="circle ms-lg-0 ms-md-0 ms-auto">
+                                <img src="../../assets/profileImageAndIcon/view.svg" alt="">
+                            </div> -->
+                            <div (click)="openPopUp()" class="circle" data-bs-toggle="modal" data-bs-target="#businessEnquiries">
+                                <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="businessEnquiries" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Business enquiries</h5>
+                    <span class="secondTitle">
+                        Please select the services you can be contacted for
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12" *ngFor="let item of businesEnquiries; let i=index">
+                        <div class="checkBox">
+                            <input (change)="checkedEnquiries($event,i,item)" class="form-check-input" type="checkbox"
+                                id="flexCheckChecked" [checked]="item.isSelected">
+                            <div [ngClass]="item.isSelected ? 'checkBoxLabelactive' : 'checkBoxLabel'">
+                                {{item.name}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spinner-border text-primary spinner" role="status" *ngIf="isSpinner">
+    <span class="sr-only">Loading...</span>
+</div>
+

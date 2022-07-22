@@ -1,0 +1,465 @@
+<section class="story">
+    <div class="row">
+        <div class="col-lg-12 px-0">
+            <div class="row">
+                <div class="storySection d-flex">
+                    <div class="heading">Story</div>
+                    <div class="icons">
+                        <div class="circle" 
+                        [ngClass]="!aboutSection ? 'Activecircle' : 'circle' "
+                        (click)="hideUnHide()">
+                            <img *ngIf="aboutSection" src="../../../../assets/profileImageAndIcon/view.svg" alt="" >
+                            <img *ngIf="!aboutSection" src="../../../../assets/profileImageAndIcon/activView.svg" alt="" >
+                        </div>
+                        <div class="circle" data-bs-toggle="modal" data-bs-target="#story" (click)="edit()">
+                            <img src="../../assets/profileImageAndIcon/edit.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row " *ngIf="userBasicDetails && !aboutSection">
+                <div class="col-lg-6 col-md-6 col-12 ps-0">
+                    <span class="details">
+                        {{userBasicDetails._biography}}
+                    </span>
+                    <div class="row d-lg-flex d-md-none d-none">
+                        <div class="row p-0">
+                            <div class="pSet">
+                                Performance set
+                            </div>
+                        </div>
+                        <div class="row p-0 marginTop">
+                            <span class="languageGener">
+                                <img src="../../assets/profileImageAndIcon/languageIcon.svg" alt="">
+                                <span style="" class="lnaguages"
+                                    *ngFor="let item of userBasicDetails.user.language;let last= last">
+                                    {{item}}
+                                    <span *ngIf="!last">,</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="row p-0 marginTop">
+                            <span class="languageGener">
+                                <img src="../../assets/profileImageAndIcon/bmusic.svg" alt="">
+                                <span class="lnaguages"
+                                    *ngFor="let item of userBasicDetails.user.genre; let last =last">
+                                    {{item}} <span *ngIf="!last">,</span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row d-lg-flex d-md-none d-none">
+                        <div class="pSet">
+                            Band Mebers
+                        </div>
+                    </div>
+                    <div class="row d-lg-flex d-md-none d-none">
+                        <div class="col-lg-6  px-0" *ngFor="let item of bandMembersList">
+                            <div class="row">
+                                <div class=" w-auto px-0">
+                                    <div class="bandMemberIconName">
+                                        <div class="memberIcon">
+                                            <img src="../../../../assets/profileImageAndIcon/user.svg" alt="">
+                                        </div>
+                                        <div class="bandMembersName">
+                                            {{item.name}} -
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" px-0 w-auto">                 
+                                <div class="roleContainer Mr">
+                                    <div class="bandMembersRole" *ngFor="let roles of item.roles; let last = last">
+                                        <span>{{roles.role}}</span>
+                                        <span *ngIf="!last">,</span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- <div class="col-lg-1 d-lg-block d-md-none"></div> -->
+                <div class="col-lg-6 col-md-6 col-12 pe-0 ps-md-1 ps-lg-1 ps-0 imageTop">
+                    <div class="featurImage" *ngIf="userBasicDetails.featured_image!=null">
+                        <img [src]="userBasicDetails.featured_image" alt="">
+                    </div>
+                    <div class="featurVideo" *ngIf="userBasicDetails.featured_yt_link!=''">
+                        <youtube-player
+                        class="w-100" [videoId]="userBasicDetails.video_id" (ready)="savePlayer($event)"
+                            (change)="onStateChange($event)" [playerVars]="userBasicDetails.featured_yt_link">
+                        </youtube-player>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-6 col-md-7 col-12 ps-0 order-md-1 order-2">
+                    <div class="row d-lg-none d-md-flex d-flex">
+                        <div class="pSet pSetInSmall">
+                            Band Mebers
+                        </div>
+                    </div>
+                    <div class="row d-lg-none d-md-flex d-none ">
+                        <div class="col-lg-6  px-0" >
+                            <div class="row">
+                                <div class="col-md-6 px-0" *ngFor="let item of bandMembersList">
+                                   <div class="row">
+                                    <div class="w-auto px-0">
+                                        <div class="bandMemberIconName">
+                                            <div class="memberIcon">
+                                                <img src="../../../../assets/profileImageAndIcon/user.svg" alt="">
+                                            </div>
+                                            <div class="bandMembersName">
+                                                {{item.name}} -
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-auto px-0">
+                                        <div class="roleContainer Mr">
+                                            <div class="bandMembersRole" *ngFor="let roles of item.roles; let last = last">
+                                                <span>{{roles.role}}</span>
+                                                <span *ngIf="!last">,</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-lg-none d-md-none d-flex">
+                        <div class="col-12 px-0" *ngFor="let item of bandMembersList">
+                            <div class="row">
+                                <div class="w-auto px-0">
+                                    <div class="bandMemberIconName">
+                                        <div class="memberIcon">
+                                            <img src="../../../../assets/profileImageAndIcon/user.svg" alt="">
+                                        </div>
+                                        <div class="bandMembersName">
+                                            {{item.name}} -
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-auto px-0">
+                                    <div class="roleContainer Mr">
+                                        <div class="bandMembersRole" *ngFor="let roles of item.roles; let last = last">
+                                            <span>{{roles.role}}</span>
+                                            <span *ngIf="!last">,</span>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 px-0 order-md-2 order-1" >
+                    <div class="row p-0 d-lg-none d-md-flex d-flex ">
+                        <div class="pSet ">
+                            Performance set
+                        </div>
+                    </div>
+                    <div class="row p-0 marginTop d-lg-none d-md-flex d-flex ">
+                        <span class="languageGener">
+                            <img src="../../assets/profileImageAndIcon/languageIcon.svg" alt="">
+                            <span style="" class="lnaguages"
+                                *ngFor="let item of userBasicDetails.user.language;let last= last">
+                                {{item}}
+                                <span *ngIf="!last">,</span>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="row p-0 marginTop d-lg-none d-md-flex d-flex ">
+                        <span class="languageGener">
+                            <img src="../../assets/profileImageAndIcon/bmusic.svg" alt="">
+                            <span class="lnaguages"
+                                *ngFor="let item of userBasicDetails.user.genre; let last =last">
+                                {{item}} <span *ngIf="!last">,</span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div class="col-md-12 d-lg-none d-md-block d-block px-0">
+                    <div class="row">
+                        <div class="col-md-4 order-md-2 px-0">
+                            <div class="pSet">
+                                Performance set
+                            </div>
+                            <div class="row marginTop">
+                                <span>
+                                    <img src="../../assets/profileImageAndIcon/languageIcon.svg" alt="">
+                                    <span style="margin-left: 7px;" class="lnaguages"
+                                        *ngFor="let item of userBasicDetails.user.language; let last=last">
+
+                                        {{item}}
+                                        <span *ngIf="!last">,</span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="row marginTop">
+                                <span>
+                                    <img src="../../assets/profileImageAndIcon/bmusic.svg" alt="">
+                                    <span class="lnaguages" *ngFor="let item of userBasicDetails.user.genre"> {{item}}
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-8 order-md-1 px-0">
+                            <div class="row bandMembers">
+                                <div class="bmHeading px-0">Band Mebers</div>
+                                <div class="row px-0">
+                                    <div class="col-lg-6 col-6 ps-0 d-flex" *ngFor="let item of bandMembersList">
+                                        <div class="membersName w-50" [matTooltip]="item.name"
+                                            [matTooltipDisabled]="item.name.length < 8">
+                                            <img src="../../assets/profileImageAndIcon/user.svg" alt="">
+                                            <span class="textWrap">{{item.name}} - </span>
+                                        </div>
+                                        <div class="names w-100" style="margin-top:14px;">
+                                            <div class="row">
+                                                <div class="col-md-12 p-0"
+                                                    *ngFor="let item of item.roles; let  last= last">
+                                                    <span class="textWrap">{{item.role}}</span>
+                                                    <span *ngIf="!last">,</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="story" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h5 class="modal-title" id="exampleModalLabel">Story</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <textarea name="" id="" rows="5" [(ngModel)]="jsonAbout.story"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12 coverMarginTop">
+                        <h5 class="modal-title" id="exampleModalLabel">Cover</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <input type="text" 
+                        [disabled]="jsonAbout.featured_image!=null"
+                        [(ngModel)]="jsonAbout.featured_yt_link" placeholder="YouTube URL link for a video">
+                        <div class="or">Or</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col12">
+                        <div class="allchips">
+                            <div class="chipHeading">Choose</div>
+                            <button type="button" class="chipBody"
+                            [disabled]="jsonAbout.featured_yt_link!=''"
+                            (click)="imageInput.click()">
+                                <span>Image</span>
+                                <input #imageInput type="file" (change)="featureImageChoogen($event)"
+                                    style="display:none;" />
+                            </button>
+                            <!-- <label class="chipBody" for="BtnBrowseHidden"
+                                (click)="coverChoosen=!coverChoosen">Image</label>
+                            <input id="BtnBrowseHidden" style="display: none;"
+                             
+                                type="file" #imageInput (change)="featureImageChoogen($event)"> -->
+                            <div class="row" >
+                                <div class="imageArea">
+                                    <span class="cross" (click)="restTHeImage()">X</span>
+                                    <img class="w-100" [src]="base64" alt="" style="height:50px;">
+                                    <span>{{fileToUpload}}</span>
+                                </div>
+                            </div>
+                            <!-- <div [ngClass]="coverChoosen=='Audio' ? 'coverCoose' : 'chipBody' "
+                                (click)="coverCoose('Audio')">Audio</div>
+                            <div [ngClass]="coverChoosen=='Video' ? 'coverCoose' : 'chipBody' "
+                                (click)="coverCoose('Video')">Video</div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <h5 class="modal-title performenceTitel" id="exampleModalLabel">Performance Set</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="row position-relative">
+                            <label for="">Language</label>
+                            <div class="languagechipsInput" (click)="toggleMenu(); preventCloseOnClick();
+                            openDropDownInInstrument=-1;
+                            ">
+                                <div class="inputchips mt-1 mb-1" *ngFor="let item of selectedLanguage; let i=index">
+                                    <span> {{item.name}}</span>
+                                    <span class="imgCross" (click)="deleteLanguage(i,item); ">
+                                        <img src="../../assets/profileImageAndIcon/x.svg" alt="">
+                                    </span>
+                                </div>
+                                <div class="iconDown ms-auto">
+                                    <img src="../../../../assets/icons/downArrowLine.svg" alt="">
+                                </div>
+                            </div>
+                            <div (click)="preventCloseOnClick()" *ngIf="openDownLanguage"
+                                [ngClass]="{'dorpDownOpen':openDownLanguage,'dorpDownClose':!openDownLanguage}">
+                                <p class="p-1 my-2" *ngFor="let item of listofLanguage;let i= index">
+                                    <span>
+                                        <input [(ngModel)]="item.isSelected" type="checkbox"
+                                            (change)="selecteLanguage($event,item,i)">
+                                        <span> {{item.name}} </span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-3 position-relative">
+                            <label for="">Genre</label>
+                            <div class="languagechipsInput" (click)="openDownGener=!openDownGener;
+                            openDownLanguage=false;
+                            openDropDownInInstrument=-1;
+                             preventCloseOnClick()">
+                                <div class="inputchips mt-1 mb-1" *ngFor="let item of selectedGeners; let i=index">
+                                    <span> {{item.name}}</span>
+                                    <span class="imgCross" (click)="deletGener(i,item); ">
+                                        <img src="../../assets/profileImageAndIcon/x.svg" alt="">
+                                    </span>
+                                </div>
+                                <div class="iconDown ms-auto">
+                                    <img src="../../../../assets/icons/downArrowLine.svg" alt="">
+                                </div>
+                            </div>
+                            <div (click)="preventCloseOnClick()" *ngIf="openDownGener"
+                                [ngClass]="{'dorpDownOpen':openDownGener,'dorpDownClose':!openDownGener}">
+                                <p class="p-1 my-2" *ngFor="let item of listOfgeners;let i= index">
+                                    <span>
+                                        <input [(ngModel)]="item.isSelected" type="checkbox"
+                                            (change)="choosenGener($event,item,i)">
+                                        <span> {{item.name}} </span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <label for="">Genre</label>
+                            <div class="languagechipsInput">
+                                <div class="inputchips mt-1 mb-1" *ngFor="let item of generList; let i=index">
+                                    <span> {{item}}</span>
+                                    <span class="imgCross" (click)="deletGener(i)">
+                                        <img src="../../assets/profileImageAndIcon/x.svg" alt="">
+                                    </span>
+                                </div>
+                                <input type="text" placeholder="Type & Enter" [(ngModel)]="generToSet"
+                                    (keyup.enter)="choosenGener()">
+
+                            </div> -->
+                        <div class="row">
+                            <h5 class="modal-title performenceTitel" id="exampleModalLabel">Band Members</h5>
+
+                        </div>
+                        <div class="row">
+                            <div [formGroup]="bandMembersForm" class="row p-0">
+                                <div formArrayName="items" class="px-0"
+                                    *ngFor="let item of bandMembersForm.get('items').controls; let i = index;">
+                                    <div [formGroupName]="i" class="row">
+                                        <div class="col-lg-3 col-md-3 col-8 ps-0 ">
+                                            <label for="">Name</label>
+                                            <input type="text" formControlName="name" placeholder="name">
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-12 ps-0 order-lg-2 order-md-2 order-3">
+                                            <div class="row position-relative">
+                                                <label for="" style="margin-top: 5px;">Instrument</label>
+                                                <div class="languagechipsInput" (click)="openDropDownInInstrument=i;
+                                                openDownLanguage=false;
+                                                openDownGener=false;
+                                                instrumentSlected(item);
+                                                 preventCloseOnClick()">
+                                                    <div class="inputchips mt-1 mb-1"
+                                                        *ngFor="let item of returnArray(i); let k=index">
+                                                        <span> {{item.role}}</span>
+                                                        <span class="imgCross" (click)="deletInstruments(k,item,i); ">
+                                                            <img src="../../assets/profileImageAndIcon/x.svg" alt="">
+                                                        </span>
+                                                    </div>
+                                                    <div class="iconDown ms-auto">
+                                                        <img src="../../../../assets/icons/downArrowLine.svg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div (click)="preventCloseOnClick()" *ngIf="openDropDownInInstrument==i"
+                                                    [ngClass]="{'dorpDownOpen':openDropDownInInstrument==i,'dorpDownClose':openDropDownInInstrument==-1}">
+                                                    <p class="p-1 my-2"
+                                                        *ngFor="let item of instrumentsList;let j= index">
+                                                        <span>
+                                                            <input type="checkbox" [ngModelOptions]="{standalone: true}"
+                                                                [(ngModel)]="item.isSelected"
+                                                                (change)="choosenInstruments($event,item,j,i)">
+                                                            <span> {{item.role}} </span>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="languagechipsInput">
+                                                <div class="inputchips ms-1 mt-1 mb-1"
+                                                    *ngFor="let item of returnArray(i); let j=index">
+                                                    <span> {{item}}</span>
+                                                    <span class="imgCross" (click)="deletInstrument(j,i,item)">
+                                                        <img src="../../assets/profileImageAndIcon/x.svg" alt="">
+                                                    </span>
+                                                </div>
+                                                <input type="text" placeholder="Type & Enter"
+                                                    formControlName="Instrument"
+                                                    (keyup.enter)="choosenInstrument(i,item)">
+                                            </div> -->
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-4 order-lg-3 order-md-3 order-2">
+                                            <label for="" class="mt-1"></label>
+                                            <div class="action mt-1">
+                                                <div class="actionItem">
+                                                    <div class="circle">
+                                                        <img src="../../assets/profileImageAndIcon/activView.svg"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="actionItem" (click)="deleteBrandMember(i)">
+                                                    <img src="../../assets/profileImageAndIcon/x-circle.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row px-0">
+                                <div class="addRowButton mt-1" (click)="addBandMembers()">
+                                    + Add member
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" class="submitButton ms-xl-auto ms-lg-auto ms-md-auto me-xl-0 me-lg-0 me-md-0 mx-auto" data-bs-dismiss="modal" (click)="saveChanges()">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="spinner-border text-primary spinner" role="status" *ngIf="isSpinner || isFinished">
+    <span class="sr-only">Loading...</span>
+</div>
